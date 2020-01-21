@@ -4,7 +4,11 @@
 }
 
 body {
+<<<<<<< HEAD
     background-color: burlywood;
+=======
+    background-color: lightblue;
+>>>>>>> bd2dbb5513e49150ed28a8f5f44fd91ae978b2c8
 }
 
 h1 {
