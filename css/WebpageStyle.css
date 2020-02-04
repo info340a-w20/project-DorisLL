@@ -48,6 +48,7 @@ img {
     width: 80%;
     margin-left: 10%;
     margin-right: 10%;
+    margin-bottom: 20px;
 }
 
 h2 {
@@ -88,4 +89,8 @@ input {
 
 .vac {
     color: dimgrey;
+}
+
+.fa-stethoscope {
+    color: whitesmoke;
 }

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="Doris Liu, Mackenzie Hutchison">
+    <title>Project Proposal</title>
+    <link rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <main class="container">
+        <section id="header">
+            <h1>Project Proposal</h1>
+            <p id="MembersName">Group Members: Doris Liu, Mackenzie Hutchison</p>
+        </section>
+        <section class="topicDescription">
+            <h2>Topic Description</h2>
+            <img src="imgs/CoursePlan.jpg" alt="Cartoon of Course Planning">
+            <p>
+                Considering current registration resources, students run into a range of problems when finding an ideal course schedule each quarter.
+                An overarching issue is that students often have to consider a wide range of classes each quarter, in the case that they do not get
+                their first options. The process of gaining knowledge about the structure and rigor of courses, in combination with building a schedule
+                with all scheduling factors remains insufficient for a range of reasons.
+            </p>
+            <ul>
+                <li><em>It is difficult to tell how cirriculums differ across similar classes:</em> There are many courses at UW which teach similar content,
+                but with slight variation. Many courses may provide as substitutes to one another due to their similarities in topic, but with differences
+                in pre requisite knowledge and class rigor. The description of classes in the course catalog is hardly sufficient in being able to select one 
+                class over another, or finding a suitable alternative to a class which may have filled up. For example, a student may be looking to choose
+                between INFO 340 and CSE 154, two web development classes. Current online resources do not provide sufficient descriptions of how these courses vary,
+                in order for a student to make an informed decision on which one to take based on their academic needs. </li>
+                <li><em>It is difficult to determine the reliability of current course / professor reviews:</em> The closest resource available to view individual
+                feedback about a course would be Rate My Professor. However, the feedback given may not always be useful to students across the board. Students reviewing
+                courses come from a variety of backgrounds, so one review may not be useful to every student. For example, a computer science major may give poor reviews to 
+                a creative writing course. However, the quality of the review may just be due to the suitability of the student's skill set to the demand of the course.
+                Upon searching for reviews on the course, a creative writing major will view this, with no indicator of the reviewers basis of knowledge. These reviews
+                are presented in a 'one size fits all' fashion, despite the fact that certain classes may be a better fit for certain students.</li>
+                <li><em>It can be very difficult to map out an ideal schedule, all factors considered: </em>Many students have a difficult time building a schedule for the 
+                quarter, when it comes to taking the desired classes, without overlap, with the right professors. There are many moving parts of building a schedule, which
+                makes it very difficult to keep track of all factors. Currently, there are systems in place where students may do their own course search, and select their
+                own classes, and will only be informed if the schedule is not possible for the given sections, teachers, and courses (due to course capacity or time overlaps).
+                MyPlan is a useful tool, but provides essentially no guidance in terms of different scheduling options, given a range of selected courses. </li>
+            </ul>
+
+            <p>
+                We would like to develop an application that may help students to better arrange their courses in a most efficient way. 
+            </p>
+        </section c>
+        <section class="potentialApps">
+            <h2>Potential Web Applications</h2>
+            <ol>
+                <li class="BetterRateMyProf">An advanced “Rate My Professor"
+                    <img src="imgs/RateMyProfSnapshot.jpg" alt="Rate My Professor">
+                    <ul id="BetterRateMyProf">
+                        <li class="overarching goal">
+                            The web application is to help students access reviews for specific classes that are helpful to their academic background. 
+                        </li>
+                        <li class="tasks">
+                            In this application, a user will be able to search for a course, professor, and input their major as well as if they have taken
+                            the course. If they have taken the course, they will be prompted to leave a review, consisting of a score out of five to determine
+                            how helpful the course was to them, given their academic goals and their field of study. They may also select tags and leave a comment.
+                            If they have not taken the class, they will be directed to the page with the reviews. The information that is shown will be unique to
+                            the search criteria, as they will only view information which is relevant to that course and professor, with reviews from others in 
+                            their specified major. They will be given summarizing information, most importantly a score out of 5 which represents how relevant this course
+                            is to their academic pathway. This score will be generated as an average of two numbers. One, being an average score of all of the reviews
+                            left by verified students. The other number which will contribute will be a more objective measure, based on the number of graduation 
+                            requirements in that major which require you to take that class. For example, if 80% of the courses in a given major require you to take a 
+                            specific class, this would make the objective portion of the overall score a 4/5. If, on average, students of a given major scored this class
+                            a 5/5, the overall score that would be shown would be 4.5/5 (an average of both scores).
+                        </li>
+                        <li class="interactions">
+                            This system would aim to streamline meaningful information to students about whether or not they should take a class, in a concise and accurate
+                            fashion. Students will be able to view information about classes, which is only relevant to them. This will allow students to make better informed
+                            decisions about how a class will be helpful in meeting their academic goals, based on their specific major.
+                        </li>
+                    </ul>
+                </li>
+                <li class="CoursePlanGenerator">A website that generates course plan for students automatically
+                    <img src="imgs/MyPlanSnapshot.jpg" alt="UW My Plan">
+                    <ul id="CoursePlanGenerator">
+                        <li class="overarching goal">
+                            This website will automatically generate different versions of a schedule of classes for a given quarter.
+                        </li>
+                        <li class="tasks">
+                            Users will be able to provide information about which classes they wish to take for the quarter, as well as restrictions
+                            of days and timing for their schedule.
+                        </li>
+                        <li class="interactions">
+                            For this application, the UW course catalog will be used as a resource for data to generate classes. The application will 
+                            need to account for the status of the class capacity to see if it is currently available, as well as the times which a given class is offered.
+                            Based on the classes which a student inputs which they would like to take, this application will consider different combinations of schedules
+                            for sections which are open, do not overlap with one another timewise, and fit any timing restrictions provided by the author. 
+                        </li>
+                    </ul>
+                </li>
+                <li class="AlternateClassGenerator"> An Alternate Class Generator
+                    <ul id="AlternateClassGenerator">
+                        <li class="overarching goal">
+                            This web application will aim to provide students with suitable alternatives for classes which they are interested in.
+                            Whether a student has to find an alternative option to their first class choice, or choose between two classes which may
+                            fill the same requirement, students need information about how classes differ from one another.
+                        </li>
+                        <li class="tasks">
+                            This app will use data about the different courses offered at UW. Considering this information, a user will be able to search
+                            for a given class to either leave a suggestion for course alternatives to that class, or they will be able to simply view
+                            the reviews which have already been left by different students. For example, if a user searches STAT 220, an alternative suggestion
+                            would likely be STAT 311. They will be able to view what students say about their experience in one course or another. It could become
+                            clear that although these classes often fill the same requirements, one would require a larger base of previous knowledge.
+                        </li>
+                        <li class="interactions">
+                            A student would be able to easily search their preferred course on this website, and immediately view what people may suggest to take instead,
+                            as well as the reasoning behind it. They will be able to view the differences in what people say in terms of their experiences in the different
+                            classes, in order to make an informed decision. This application would streamline the dialogue which already takes place between students 
+                            into one easily accessible webpage.
+                        </li>
+                    </ul>
+                </li>
+            </ol>
+        </section c>
+
+        <section class="references">
+            <h2>References</h2>
+            <ol>
+                <li>
+                    <a href="https://www.washington.edu/cec/toc.html">UW Course Evaluation Page</a>
+                </li>
+                <li>
+                    <a href="https://www.ratemyprofessors.com">Rate My Professor Website</a>
+                </li>
+                <li>
+                    <a href="https://prereqmap.uw.edu">Prereq Map Website of UW</a>
+                </li>
+            </ol>
+        </section c>
+    </main>
+
+</body>
+</html>
