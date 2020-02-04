@@ -94,3 +94,20 @@ input {
 .fa-stethoscope {
     color: whitesmoke;
 }
+
+.flu-shot-loc {
+    color: black;
+    font-weight: 500;
+}
+
+.list-of-places {
+    font-size: medium;
+ }
+
+#flu-shot-location-words {
+    width: fit-content;
+}
+
+.list-of-places {
+    border-image-width: inherit;
+}

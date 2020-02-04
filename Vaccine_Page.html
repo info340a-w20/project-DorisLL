@@ -15,7 +15,7 @@
 <body>
     <!--header-->
     <header class="navbar navbar-expand-lg navbar-light bg-light">
-        <h1 class="navbar-brand"><a href="./Intro_Page.html"><i class="fa fa-stethoscope" aria-hidden="true"></i></a> The Flu Vaccine</h1>
+        <h1 class="navbar-brand"><i class="fa fa-stethoscope" aria-hidden="true"></i> The Flu Vaccine</h1>
         <span>Why is it Important?</span>
     </header>
 
@@ -34,12 +34,10 @@
             <div class="row">
                 <div class="text-center col-md-12 col-sm-12">
                     <div class="card mb-4">
-                        <div class="card-header">
-                            <h2>Vaccine Finder</h2>
-                            <p class="card-text vac">Find flu shots near you?</p>
-                        </div>
                         <div class="card-body">
                             <div class="col-sm">
+                                <h2 class="card-title">Vaccine Finder</h2>
+                                <p class="card-text vac">Find flu shots near you?</p>
                                 <form>
                                     <div class="form-group">
                                     <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Zipcode here...">
@@ -50,15 +48,38 @@
                         </div>
                     </div>     
                 </div>
+                <!-- <div class="container"> -->
+                    <div class="row">
+                        <div class="col">
+                            <h2 id="flu-shot-location-words">Flu shot providers nearby:</h2>
+                            <img src="imgs/map-placeholder.png" alt="Interactive Map">
+                        </div>
+                    </div>
+                <!-- </div>  -->
+                    <div class="container list-of-places">
+                        <ol>
+                            <li>
+                                <div class="container loc-container">
+                                    <h4 class="flu-shot-loc">Safeway</h4>
+                                    <p class="address">3020 Ne 45th St, Seattle, WA 98105</p>
+                                    <p class="phone-num"></p><i class="fa fa-phone" aria-hidden="true"></i>206-524-9931</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="container loc-container">
+                                    <h4 class="flu-shot-loc">Pharmaca Integrative Pharmacy</h4>
+                                    <p class="address">4130 E. Madison, Seattle, WA 98112</p>
+                                    <p class="phone-num"></p><i class="fa fa-phone" aria-hidden="true"></i>206-324-1188</p>
+                                </div>                            </li>
+                            <li>
+                                <div class="container loc-container">
+                                    <h4 class="flu-shot-loc">Safeway</h4>
+                                    <p class="address">7340 35th N E, Seattle, WA 98115</p>
+                                    <p class="phone-num"></p><i class="fa fa-phone" aria-hidden="true"></i>206-494-1255 </p>
+                                </div>                            </li>
+                          </ol>
+                    </div>
             </div>
-
-            <div class="container">
-                <div class="row">
-                      <h3 id="flu-shot-location-words">Flu shot providers nearby:</h3>
-                      <img src="imgs/map-placeholder.png" alt="Interactive Map">
-                </div>
-            </div>    
-
         </div>
 
     </main>
@@ -67,9 +88,10 @@
         <h4>Contact Us:</h4>
         <nav>
           <ul>
-            <li><i class="fa fa-phone" aria-hidden="true"></i><a class="contact" href="tel:1234567890"> (123)456-7890</a c></li>
-            <li><i class="fa fa-envelope" aria-hidden="true"></i><a class="contact" href="mailto:InfoStudent@UW.edu"> InfoStudent@UW.edu</a c></li>
+            <li><i class="fa fa-phone" aria-hidden="true"></i> (123)456-7890</li>
+            <li><i class="fa fa-envelope" aria-hidden="true"></i> InfoStudent@UW.edu</li>
         </nav>
     </footer>
+    
 </body>
 </html>
