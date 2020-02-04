@@ -52,3 +52,11 @@ footer {
     padding: 20px;
     margin: 0%;
 }
+
+.container.text-center {
+    text-align: center;
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+

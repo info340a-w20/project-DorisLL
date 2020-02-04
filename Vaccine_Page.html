@@ -4,9 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.css">
+    <link rel="stylesheet" href="css/WebpageStyle.css">
+    <title>Vaccine_Page</title>
 </head>
 <body>
+    <!--header-->
+    <header class="navbar navbar-expand-lg navbar-light bg-light">
+        <h1 class="navbar-brand">The Flu Vaccine</h1>
+        <span>Why is it Important?</span>
+    </header>
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="./Intro_Page.html">Home <i class="fa fa-plus-square fa-sm" aria-hidden="true"></i></a></li>
+          <li class="breadcrumb-item"><a href="./Estimate_Page.html">Flu Statistics <i class="fa fa-bar-chart" aria-hidden="true"></i></a></li>
+          <li class="breadcrumb-item active" aria-current="page"><a href="./Vaccine_Page.html">Find a Vaccine <i class="fa fa-map-marker" aria-hidden="true"></i></i></a></li>
+        </ol>
+      </nav>
+
+    <!--Main-->
+    <main>
+        <div class ="container">
+        <!--Vaccine Finder-->
+            <div class="container text-center">Vaccine Finder</div>
+            <div class="row stats-row">
+                <div class="stats-col text-center col-md-3 col-sm-6">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <div class="col-sm">
+                                <h2 class="card-title">Vaccine Finder</h2>
+                                <p class="card-text">Find flu shots near you?</p>
+
+                                <form>
+                                    <div class="form-group">
+                                    <!-- <label for="Zipcode">Zipcode</label> -->
+                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Zipcode here...">
+                                    </div>
+                                    <button type="submit" class="btn btn-dark">Go</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>     
+            </div>
+
+            <div class="container">
+                <div class="row">
+                      <h3 id="flu-shot-location-words">Flu shot providers nearby:</h3>
+                      <img src="imgs/map-placeholder.png" alt="Interactive Map">
+                </div>
+            </div>    
+
+        </div>
+
+    </main>
     
 </body>
 </html>
