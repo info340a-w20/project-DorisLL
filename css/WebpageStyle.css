@@ -53,10 +53,15 @@ footer {
     margin: 0%;
 }
 
-.container.text-center {
-    text-align: center;
-    font-size: xx-large;
-    font-weight: bold;
+
+.card-body {
+    background-color: aliceblue;
 }
 
+input {
+    background-color: slategrey;
+}
 
+.vac {
+    color: dimgrey;
+}
