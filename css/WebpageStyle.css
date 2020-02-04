@@ -1,0 +1,54 @@
+.navbar-brand {
+    font-size: 2.0rem;
+    color: whitesmoke;
+}
+
+.navbar-light .navbar-brand {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: whitesmoke !important;
+}
+
+span{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: whitesmoke;
+}
+
+a {
+    color: darkslategrey;
+    font-weight: bold;
+}
+
+.bg-light {
+    background-color: darkred !important;
+}
+
+.card-header {
+    background-color:rgb(25, 25, 83);
+    color: whitesmoke;
+}
+
+body {
+    color: navy;
+}
+
+img {
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+h3 {
+    color: rgb(25, 25, 83);
+    text-decoration: underline;
+    padding: 5px;
+    margin-left: 25%;
+    margin-right: 25%;
+    width: 50%;
+}
+
+footer {
+    background-color: darkred;
+    color: whitesmoke;
+    padding: 20px;
+    margin: 0%;
+}
