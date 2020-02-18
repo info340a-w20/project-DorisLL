@@ -133,3 +133,7 @@ table tr:first-child {
     font-weight: bold;
     color: black;
 }
+
+section {
+    padding-bottom: 20%;
+}
