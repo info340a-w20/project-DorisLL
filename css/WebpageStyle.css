@@ -44,6 +44,13 @@ body {
     color: navy;
 }
 
+#myChart {
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 20px;
+}
+
 img {
     width: 80%;
     margin-left: 10%;
@@ -83,9 +90,11 @@ footer {
     background-color: aliceblue;
 }
 
-input {
+
+/* mackenzie commented out */
+/* input {
     background-color: slategrey;
-}
+} */
 
 .vac {
     color: dimgrey;
