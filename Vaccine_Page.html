@@ -11,19 +11,27 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.css">
     <link rel="stylesheet" href="css/WebpageStyle.css">
     <title>Vaccine_Page</title>
-</head>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <!-- Leaflet Map Visualization -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+    crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+    integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+    crossorigin=""></script>
 <body>
     <!--header-->
     <header class="navbar navbar-expand-lg navbar-light bg-light">
-        <h1 class="navbar-brand"><i class="fa fa-stethoscope" aria-hidden="true"></i> The Flu Vaccine</h1>
-        <span>Why is it Important?</span>
+        <h1 class="navbar-brand"><a href="./Intro_Page.html"><i class="fa fa-stethoscope" aria-hidden="true"></i></a> The Flu Vaccine</h1>
+        <!-- <span>Why is it Important?</span> -->
     </header>
 
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="./Intro_Page.html">Home <i class="fa fa-plus-square fa-sm" aria-hidden="true"></i></a></li>
           <li class="breadcrumb-item"><a href="./Estimate_Page.html">Flu Statistics <i class="fa fa-bar-chart" aria-hidden="true"></i></a></li>
-          <li class="breadcrumb-item active" aria-current="page"><a href="./Vaccine_Page.html">Find a Vaccine <i class="fa fa-map-marker" aria-hidden="true"></i></i></a></li>
+          <li class="breadcrumb-item"><a href="./Vaccine_Page.html">Find a Vaccine <i class="fa fa-map-marker" aria-hidden="true"></i></a></li>
         </ol>
       </nav>
 
@@ -33,55 +41,55 @@
         <!--Vaccine Finder-->
             <div class="row">
                 <div class="text-center col-md-12 col-sm-12">
-                    <div class="card mb-4">
+                    <div class="card mb-4 w3-animate-zoom"> <!--w3-animate-zoom-->
+                        <div class="card-header">
+                                <h2>Vaccine Finder</h2>
+                        </div>
                         <div class="card-body">
                             <div class="col-sm">
-                                <h2 class="card-title">Vaccine Finder</h2>
+                                <!-- <h2 class="card-title">Vaccine Finder</h2> -->
                                 <p class="card-text vac">Find flu shots near you?</p>
                                 <form>
                                     <div class="form-group">
-                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Zipcode here...">
+                                    <input type="number" class="form-control" id="ZipInput" aria-describedby="zipHelp" placeholder="Zipcode here...">
                                     </div>
-                                    <button type="submit" class="btn btn-dark">Go</button>
+                                    <button type="button" class="btn btn-dark" id="button">Go</button>
                                 </form>
                             </div>
                         </div>
                     </div>     
                 </div>
-                <!-- <div class="container"> -->
+                <div class="container">
                     <div class="row">
                         <div class="col">
                             <h2 id="flu-shot-location-words">Flu shot providers nearby:</h2>
-                            <img src="imgs/map-placeholder.png" alt="Interactive Map">
-                        </div>
-                    </div>
-                <!-- </div>  -->
-                    <div class="container list-of-places">
-                        <ol>
-                            <li>
-                                <div class="container loc-container">
-                                    <h4 class="flu-shot-loc">Safeway</h4>
-                                    <p class="address">3020 Ne 45th St, Seattle, WA 98105</p>
-                                    <p class="phone-num"></p><i class="fa fa-phone" aria-hidden="true"></i>206-524-9931</p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="container loc-container">
-                                    <h4 class="flu-shot-loc">Pharmaca Integrative Pharmacy</h4>
-                                    <p class="address">4130 E. Madison, Seattle, WA 98112</p>
-                                    <p class="phone-num"></p><i class="fa fa-phone" aria-hidden="true"></i>206-324-1188</p>
-                                </div>                            </li>
-                            <li>
-                                <div class="container loc-container">
-                                    <h4 class="flu-shot-loc">Safeway</h4>
-                                    <p class="address">7340 35th N E, Seattle, WA 98115</p>
-                                    <p class="phone-num"></p><i class="fa fa-phone" aria-hidden="true"></i>206-494-1255 </p>
-                                </div>                            </li>
-                          </ol>
-                    </div>
+                            <div class="map">
+                                <div id="locationMap"></div>
+                                
+                                <!-- <iframe src="https://www.google.com/maps/d/embed?mid=1Apq9gbzIZluWkjtr-7uPJZEGOwJ3vXVX" width= "80%" height="500" border="0">Loading...</iframe> -->
+                            </div>
+
+                    <!-- Location Table -->
+                    <section id = "list-locations" class="list hide" style= "display:block">
+                    <script src="http://d3js.org/d3.v3.min.js"></script>
+                       <script>
+                        d3.text("data/Location.csv", function(data) {
+                        var parsedCSV = d3.csv.parseRows(data);
+                        var container = d3.select("#list-locations")
+                                            .append("table")
+                                            .selectAll("tr")
+                                                .data(parsedCSV).enter()
+                        .append("tr")
+                        .selectAll("td")
+                        .data(function(d) { return d; }).enter()
+                        .append("td")
+                        .text(function(d) { return d; });
+                        });
+                        </script>
+                        
+                    </section>
             </div>
         </div>
-
     </main>
 
     <footer>
@@ -92,6 +100,6 @@
             <li><i class="fa fa-envelope" aria-hidden="true"></i> InfoStudent@UW.edu</li>
         </nav>
     </footer>
-    
+    <script src="js/Vaccine.js"></script>
 </body>
 </html>

@@ -111,3 +111,24 @@ input {
 .list-of-places {
     border-image-width: inherit;
 }
+
+
+table {
+    border-collapse: collapse;
+    border: 2px lightblue;
+    font: 12px sans-serif;
+    }
+td {
+    border: 1px black solid;
+    padding: 5px;
+                }
+
+#locationMap { height: 300px; }
+
+#list-Locations {
+    align-content: center;
+}
+table tr:first-child {
+    font-weight: bold;
+    color: black;
+}
