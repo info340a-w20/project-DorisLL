@@ -17,16 +17,15 @@
 <body>
     <header class="navbar navbar-expand-lg navbar-light bg-light">
         <h1 class="navbar-brand"><a href="./Intro_Page.html"><i class="fa fa-stethoscope" aria-hidden="true"></i></a> The Flu Vaccine</h1>
-        <span>Why is it Important?</span>
     </header>
 
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="./Intro_Page.html">Home <i class="fa fa-plus-square fa-sm" aria-hidden="true"></i></a></li>
-          <li class="breadcrumb-item"><a href="./Estimate_Page.html">Flu Statistics <i class="fa fa-bar-chart" aria-hidden="true"></i></a></li>
-          <li class="breadcrumb-item active" aria-current="page"><a href="./Vaccine_Page.html">Find a Vaccine <i class="fa fa-map-marker" aria-hidden="true"></i></i></a></li>
+          <li class="breadcrumb-item"><a href="./Intro_Page.html"><span class="nav-label">Home</span> <i class="fa fa-home fa-sm link-icon" aria-hidden="true"></i></a></li>
+          <li class="breadcrumb-item"><a href="./Estimate_Page.html"><span class="nav-label">Flu Statistics</span> <i class="fa fa-bar-chart link-icon" aria-hidden="true"></i></a></li>
+          <li class="breadcrumb-item active" aria-current="page"><a href="./Vaccine_Page.html"><span class="nav-label">Find a Vaccine</span><i class="fa fa-map-marker link-icon" aria-hidden="true"></i></i></a></li>
         </ol>
-      </nav>
+    </nav>
       <main>
         <div class="container">
 
@@ -105,19 +104,18 @@
         </div>
     </main>
 
-      <div class="container map">
+      <div class="container map" id="mapped-cases">
           <div class="row">
                 <h3>Mapped Cases of Influenza in the US:</h3>
-                <img src="imgs/map.jpg" alt="US Map">
+                <img id="us-map" src="imgs/map.jpg" alt="US Map">
           </div>
       </div>
 
       <footer>
           <h4>Contact Us:</h4>
-          <nav>
-            <ul>
-              <li><i class="fa fa-phone" aria-hidden="true"></i><a class="contact" href="tel:1234567890"> (123)456-7890</a c></li>
-              <li><i class="fa fa-envelope" aria-hidden="true"></i><a class="contact" href="mailto:InfoStudent@UW.edu"> InfoStudent@UW.edu</a c></li>
+          <nav class="contact">
+              <a href="tel:1234567890"><i class="fa fa-phone link-icon" aria-hidden="true"></i><span class="nav-label">(123)456-7890</span></a c>
+              <a href="mailto:InfoStudent@UW.edu"><i class="fa fa-envelope link-icon" aria-hidden="true"></i><span class="nav-label">InfoStudent@UW.edu</span></a c>
           </nav>
       </footer>
 </body>

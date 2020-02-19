@@ -9,24 +9,23 @@
     <meta name="keywords" content="HTML,CSS,XML,JavaScript"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.css">
-    <link rel="stylesheet" href="css/WebpageStyle.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="css/WebpageStyle.css">
 
     <title>Document</title>
 </head>
 <body>
     <header class="navbar navbar-expand-lg navbar-light bg-light">
         <h1 class="navbar-brand"><a href="./Intro_Page.html"><i class="fa fa-stethoscope" aria-hidden="true"></i></a> The Flu Vaccine</h1>
-        <!-- <span>Why is it Important?</span> -->
     </header>
 
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="./Intro_Page.html">Home <i class="fa fa-plus-square fa-sm" aria-hidden="true"></i></a></li>
-          <li class="breadcrumb-item"><a href="./Estimate_Page.html">Flu Statistics <i class="fa fa-bar-chart" aria-hidden="true"></i></a></li>
-          <li class="breadcrumb-item active" aria-current="page"><a href="./Vaccine_Page.html">Find a Vaccine <i class="fa fa-map-marker" aria-hidden="true"></i></i></a></li>
+          <li class="breadcrumb-item"><a href="./Intro_Page.html"><span class="nav-label">Home</span> <i class="fa fa-home fa-sm link-icon" aria-hidden="true"></i></a></li>
+          <li class="breadcrumb-item"><a href="./Estimate_Page.html"><span class="nav-label">Flu Statistics</span> <i class="fa fa-bar-chart link-icon" aria-hidden="true"></i></a></li>
+          <li class="breadcrumb-item active" aria-current="page"><a href="./Vaccine_Page.html"><span class="nav-label">Find a Vaccine</span><i class="fa fa-map-marker link-icon" aria-hidden="true"></i></i></a></li>
         </ol>
-      </nav>
+    </nav>
 
       <main>
             <div class="container">
@@ -36,7 +35,7 @@
                             <h2><em>How Does the Flu Affect Us?</em></h2>
                         </div>
                         <div class="card-body">
-                            <p>
+                            <p class="description">
                                 Dangers of the flu are very commonly overlooked, due to the normalization of the illness. It is important for people to understand
                                 the need for vaccinations, in the context of how dangerous these outbreaks can actually be. Despite being an illness which is present each
                                 year, it can still have drastic effects on our community, if we forego precautionary measures.
@@ -46,33 +45,51 @@
 
                 </div c>
                 <div class="row">
-                    <h3><em>Flu Related Hospitalizations over time:</em></h3>
-                    <p>
+                    <h3><em>Flu Related Hospitalizations:</em></h3>
+                    <p class="description">
                         Despite the current quality of health care, influenza does still have a serious effect on the health of
                         our communities. Despite the fact that the flu is not generally considered fatal, hospitalizations occur
-                        due to the illness every year.
+                        due to the illness every year, which people do not recognize. Test your perception of flu related hospitalizations
+                        against real data from last year's flu season below. 
                     </p>
-                    <img src="imgs/hospitalizations.jpg" alt="hospitalizations">
+                    <form class="form">
+                        <label for="hguess">How many flu related hospitalizations occurred in 2018-19?</label><br>
+                        <input type="number" class="hguess" name="hguess" placeholder="Enter Estimate Here..."></input><br>
+                        <button type = "button" id = "add-Hosp-Guess" class="btn btn-primary">Submit Estimate</button>
+                    </form>
+                    <canvas id="myChart"></canvas>
                 </div>
                 <div class="row">
-                    <h3><em>Pediatric Deaths By the Flu This Year:</em></h3>
-                    <p>
-                        Pediatric deaths are an indicator of how the flu can have an effect on those without a vaccination. Six months
-                        is the minimum age to acquire a vaccination, so people such as infants and those with a compromised immune system
-                        are put at serious risk due to the outbreak of the illness.
+                    <h3><em>How Long can you have the Flu without knowing?</em></h3>
+                    <p class="description">
+                        Many people can be infecting others without knowing it. All diseases have a period of time in which
+                        a disease ie present without symptoms taking place. People will continue on without precautionary
+                        measures typically taken by an infected individual, not knowing that they are infected. Test your
+                        knowledge of the duration of the flu's incubation period below.
                     </p>
-                    <img src="imgs/pediatric-deaths.jpg" alt="pediatric deaths">
+                    <form class="form">
+                        <label for="lowerBound">The incubation period for the flu is from </label>
+                        <input type="number" id="lowerBound" name="lowerBound" placeholder="Enter Estimate Here..."></input>
+                        <label for="upperBound"> to </label>
+                        <input type="number" id="upperBound" name="upperBound" placeholder="Enter Estimate Here..."></input>
+                        <label> days.</label><br>
+                        <button type = "button" id = "add-inc-guess" class="btn btn-primary">Submit Estimate</button>
+                    </form>
+                    <canvas id="myChart2"></canvas>
                 </div>
           </div>
       </main>
 
       <footer>
         <h4>Contact Us:</h4>
-        <nav>
-          <ul>
-            <li><i class="fa fa-phone" aria-hidden="true"></i><a class="contact" href="tel:1234567890"> (123)456-7890</a c></li>
-            <li><i class="fa fa-envelope" aria-hidden="true"></i><a class="contact" href="mailto:InfoStudent@UW.edu"> InfoStudent@UW.edu</a c></li>
+        <nav class="contact">
+            <a href="tel:1234567890"><i class="fa fa-phone link-icon" aria-hidden="true"></i><span class="nav-label">(123)456-7890</span></a c>
+            <a href="mailto:InfoStudent@UW.edu"><i class="fa fa-envelope link-icon" aria-hidden="true"></i><span class="nav-label">InfoStudent@UW.edu</span></a c>
         </nav>
     </footer>
+    <script src="https://d3js.org/d3-fetch.v1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script src="https://d3js.org/d3-dsv.v1.min.js"></script>
+    <script src="js/index.js"></script>
 </body>
 </html>

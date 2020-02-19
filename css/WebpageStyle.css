@@ -1,9 +1,9 @@
 .navbar-brand {
-    font-size: 2.0rem;
+    font-size: 20px;
     color: whitesmoke;
 }
 
-.navbar-light .navbar-brand {
+.navbar-brand {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: whitesmoke !important;
     text-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -15,15 +15,34 @@ span{
 }
 
 a {
-    color: darkslategrey;
+    color: navy;
     font-weight: bold;
+}
+
+/*hide the navigation labels when screen is small*/
+
+.nav-label{
+    display: none;
+}
+
+.fa {
+    padding: 10px;
+    font-size: 400%;
+    size: 4.0rem;
+}
+
+p, h3, h4, h1.navbar-brand{
+    font-size: 2.0rem;
 }
 
 .card {
     box-shadow: 0 4px 8px 0 rgba(153, 139, 139, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-
+.card-header h2 {
+    padding-left: 10%;
+    padding-right: 10%;
+}
 
 .bg-light {
     background-color: darkred !important;
@@ -44,6 +63,14 @@ body {
     color: navy;
 }
 
+#myChart, #myChart2 {
+    width: 60%;
+    padding-left: 20%;
+    padding-right: 20%;
+    margin-bottom: 20px;
+    display: block;
+}
+
 img {
     width: 80%;
     margin-left: 10%;
@@ -51,20 +78,18 @@ img {
     margin-bottom: 20px;
 }
 
-h2 {
-    font-weight: lighter;
-}
 
-h3 {
+h3, h2 {
     color: rgb(25, 25, 83);
-    font-weight: lighter;
-    text-decoration: underline;
-    padding: 5px;
     margin-top: 25px;
     margin-bottom: 25px;
     margin-left: 25%;
     margin-right: 25%;
-    width: 50%;
+    position: inherit;
+}
+
+h2 {
+    color: whitesmoke;
 }
 
 h4 {
@@ -83,9 +108,6 @@ footer {
     background-color: aliceblue;
 }
 
-input {
-    background-color: slategrey;
-}
 
 .vac {
     color: dimgrey;
@@ -104,9 +126,6 @@ input {
     font-size: medium;
  }
 
-#flu-shot-location-words {
-    width: fit-content;
-}
 
 .list-of-places {
     border-image-width: inherit;
@@ -119,6 +138,7 @@ table {
     font: 12px sans-serif;
     width: 100%
     }
+
 td {
     border: 1px black solid;
     padding: 5px;
@@ -138,6 +158,96 @@ table tr:first-child {
     color: black;
 }
 
+section{
+    padding-bottom:20% ;
+}
+
+#mapped-cases {
+    display: none;
+}
+
+li.breadcrumb-item, li.contact {
+    display: hidden;
+}
+
+/*for styling estimate page*/
+.btn {
+    color: #fff;
+    background-color: navy;
+    border-color: slategray;
+    border-width: 3px;
+}
+
+.btn, .hguess {
+    margin: 10px;
+    margin-left: 30%;
+    margin-right: 30%;
+    display: inline;
+}
+
+form {
+    background-color: aliceblue;
+    padding: 3%;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.description {
+    font-weight: lighter;
+    font-size: 1.5rem;
+    margin: 10px;
+}
+
+/*vaccine page specific styling*/
+#flu-shot-location-words {
+    color: navy;
+    width: fit-content;
+    position: relative;
+}
+
+.vaccine-card h2 {
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+.vaccine-card .card-text {
+    font-size: 1.5em;
+}
+
+.btn, input {
+    height: 2.rem;
+    width: 2.rem;
+}
+
+@media (min-width: 598px) {
+    p, h4, .link-icon{
+        font-size: 1.0rem;
+    }
+
+    h1.navbar-brand {
+        font-size: 2.0rem;
+    }
+
+
+
+    card .fa{
+        display: inline;
+    }
+
+    #mapped-cases {
+        display: block;
+    }
+
+    .nav-label{
+        display: inline;
+        color: navy;
+    }
+
+    footer .nav-label {
+        color: whitesmoke;
+    }
+
+}
 section {
     padding-bottom: 20%;
 }

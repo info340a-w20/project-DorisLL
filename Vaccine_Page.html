@@ -17,18 +17,17 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"/>
     <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
 <body>
-    <!--header-->
     <header class="navbar navbar-expand-lg navbar-light bg-light">
         <h1 class="navbar-brand"><a href="./Intro_Page.html"><i class="fa fa-stethoscope" aria-hidden="true"></i></a> The Flu Vaccine</h1>
     </header>
 
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="./Intro_Page.html">Home <i class="fa fa-plus-square fa-sm" aria-hidden="true"></i></a></li>
-          <li class="breadcrumb-item"><a href="./Estimate_Page.html">Flu Statistics <i class="fa fa-bar-chart" aria-hidden="true"></i></a></li>
-          <li class="breadcrumb-item"><a href="./Vaccine_Page.html">Find a Vaccine <i class="fa fa-map-marker" aria-hidden="true"></i></a></li>
+          <li class="breadcrumb-item"><a href="./Intro_Page.html"><span class="nav-label">Home</span> <i class="fa fa-home fa-sm link-icon" aria-hidden="true"></i></a></li>
+          <li class="breadcrumb-item"><a href="./Estimate_Page.html"><span class="nav-label">Flu Statistics</span> <i class="fa fa-bar-chart link-icon" aria-hidden="true"></i></a></li>
+          <li class="breadcrumb-item active" aria-current="page"><a href="./Vaccine_Page.html"><span class="nav-label">Find a Vaccine</span><i class="fa fa-map-marker link-icon" aria-hidden="true"></i></i></a></li>
         </ol>
-      </nav>
+    </nav>
 
     <!--Main-->
     <main>
@@ -36,7 +35,7 @@
         <!--Vaccine Finder-->
             <div class="row">
                 <div class="text-center col-md-12 col-sm-12">
-                    <div class="card mb-4 w3-animate-zoom"> <!--w3-animate-zoom-->
+                    <div class="vaccine-card card mb-4 w3-animate-zoom"> <!--w3-animate-zoom-->
                         <div class="card-header">
                                 <h2>Vaccine Finder</h2>
                         </div>
@@ -88,12 +87,10 @@
 
     <footer>
         <h4>Contact Us:</h4>
-        <nav>
-          <ul>
-            <li><i class="fa fa-phone" aria-hidden="true"></i> (123)456-7890</li>
-            <li><i class="fa fa-envelope" aria-hidden="true"></i> InfoStudent@UW.edu</li>
+        <nav class="contact">
+            <a href="tel:1234567890"><i class="fa fa-phone link-icon" aria-hidden="true"></i><span class="nav-label">(123)456-7890</span></a c>
+            <a href="mailto:InfoStudent@UW.edu"><i class="fa fa-envelope link-icon" aria-hidden="true"></i><span class="nav-label">InfoStudent@UW.edu</span></a c>
         </nav>
     </footer>
-    <!-- <script src="js/Vaccine.js"></script> -->
 </body>
 </html>
