@@ -1,11 +1,11 @@
 'use strict';
-// Table/ List
+
 let newZip;
 document.querySelector("#button").addEventListener("click", (event) => {
     event.preventDefault();
     let value = newInputZip();
-    console.log(value);
-    myFunction(value);
+    selectList(value);
+    selectPoint(value);
     document.querySelector('input').value ='';
 })
 
@@ -14,13 +14,13 @@ function newInputZip() {
     return inputNum;
 }
 
-function myFunction(inputNum) {
+function selectList(inputNum) {
     var input, table, tr, td, i, txtValue;
     input = inputNum;
     table = document.querySelector("table");
     tr = table.getElementsByTagName("tr");
     for (i = 1; i < tr.length; i++) {
-      td = tr[i].getElementsByTagName("td")[3];
+      td = tr[i].getElementsByTagName("td")[5];
       if (td) {
         txtValue = Number(td.textContent);
         if (txtValue == input) {
@@ -32,18 +32,33 @@ function myFunction(inputNum) {
     }
   }
 
-  //Map
+    //Map
+    let map = L.map('map').setView([0,0], 1);
+    L.tileLayer('https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=3xOm9QSSZNB2dK7qFbWh', {
+      attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'
+    }).addTo(map);
 
-  var mymap = L.map('mapid').setView([51.505, -0.09], 13);
-
-// var mymap = L.map('mapid').setView([51.505, -0.09], 13);
-
-//   L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-//       attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-//       maxZoom: 18,
-//       id: 'mapbox/satellite-v9',
-//       tileSize: 512,
-//       zoomOffset: -1,
-//       accessToken: 'pk.eyJ1IjoiZG9yaXNsIiwiYSI6ImNrNnNleGVudTAxbzAzZW5wMjR5b2JibTcifQ.EA3W2ouUwHcCW1uFNYxteg'
-//   }).addTo(mymap);  
-
+    function selectPoint(inputNum) {
+        map.remove();
+        map = L.map('map').setView([0,0], 1);
+    L.tileLayer('https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=3xOm9QSSZNB2dK7qFbWh', {
+      attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'
+    }).addTo(map);
+        
+        var input, table, tr, td, i, txtValue;
+        input = inputNum;
+        table = document.querySelector("table");
+        tr = table.getElementsByTagName("tr");
+        for (i = 1; i < tr.length; i++) {
+          td = tr[i].getElementsByTagName("td")[5];
+          if (td) {
+            txtValue = Number(td.textContent);
+            if (txtValue == input) {
+                L.marker([Number(tr[i].getElementsByTagName("td")[3].innerText), Number(tr[i].getElementsByTagName("td")[4].innerText)]).addTo(map);
+              tr[i].style.display = "";
+            } else {
+              tr[i].style.display = "none";
+            }
+          }  
+        }
+      }
