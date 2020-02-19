@@ -134,7 +134,7 @@ footer {
 
 table {
     border-collapse: collapse;
-    border: 2px lightblue;
+    border: 4px lightblue;
     font: 12px sans-serif;
     width: 100%
     }
@@ -144,7 +144,11 @@ td {
     padding: 5px;
                 }
 
-#locationMap { height: 300px; }
+#map { 
+    height: 400px;
+    width: 600px;
+    padding-bottom: 20%;
+ }
 
 #list-Locations {
     align-content: center;

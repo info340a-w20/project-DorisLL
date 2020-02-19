@@ -14,12 +14,8 @@
     <title>Vaccine_Page</title>
 
     <!-- Leaflet Map Visualization -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
-    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
-    crossorigin=""/>
-    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
-   integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
-   crossorigin=""></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"/>
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
 <body>
     <header class="navbar navbar-expand-lg navbar-light bg-light">
         <h1 class="navbar-brand"><a href="./Intro_Page.html"><i class="fa fa-stethoscope" aria-hidden="true"></i></a> The Flu Vaccine</h1>
@@ -45,8 +41,7 @@
                         </div>
                         <div class="card-body">
                             <div class="col-sm">
-                                <!-- <h2 class="card-title">Vaccine Finder</h2> -->
-                                <p class="card-text vac">Find flu shots near you!</p>
+                                <p class="card-text vac">Find flu shots near you?</p>
                                 <form>
                                     <div class="form-group">
                                     <input type="number" class="form-control" id="ZipInput" aria-describedby="zipHelp" placeholder="Zipcode here...">
@@ -60,11 +55,13 @@
                 <div class="container">
                     <div class="row">
                         <div class="col">
-                            <h2 id="flu-shot-location-words">Here are the flu shot providers near your location. . . </h2>
-                            <div class="map">
-                                <div id="locationMap"></div>
-                                <!-- <iframe src="https://www.google.com/maps/d/embed?mid=1Apq9gbzIZluWkjtr-7uPJZEGOwJ3vXVX" width= "80%" height="500" border="0">Loading...</iframe> -->
-                            </div>
+                            <h2 id="flu-shot-location-words">Flu shot providers nearby:</h2>
+                            
+                            <!-- Map -->
+                            <div id="map"></div>
+                          
+                          
+                            <script src="js/Vaccine.js"></script>
 
                     <!-- Location Table -->
                     <section id = "list-locations" class="list hide" style= "display:block">
@@ -95,6 +92,5 @@
             <a href="mailto:InfoStudent@UW.edu"><i class="fa fa-envelope link-icon" aria-hidden="true"></i><span class="nav-label">InfoStudent@UW.edu</span></a c>
         </nav>
     </footer>
-    <script src="js/Vaccine.js"></script>
 </body>
 </html>
