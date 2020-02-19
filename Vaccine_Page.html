@@ -9,17 +9,17 @@
     <meta name="keywords" content="HTML,CSS,XML,JavaScript"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="css/WebpageStyle.css">
     <title>Vaccine_Page</title>
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
     <!-- Leaflet Map Visualization -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
     integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
     crossorigin=""/>
     <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
-    integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
-    crossorigin=""></script>
+   integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+   crossorigin=""></script>
 <body>
     <header class="navbar navbar-expand-lg navbar-light bg-light">
         <h1 class="navbar-brand"><a href="./Intro_Page.html"><i class="fa fa-stethoscope" aria-hidden="true"></i></a> The Flu Vaccine</h1>
@@ -27,7 +27,7 @@
 
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="./Intro_Page.html"><span class="nav-label">Home</span> <i class="fa fa-plus-square fa-sm link-icon" aria-hidden="true"></i></a></li>
+          <li class="breadcrumb-item"><a href="./Intro_Page.html"><span class="nav-label">Home</span> <i class="fa fa-home fa-sm link-icon" aria-hidden="true"></i></a></li>
           <li class="breadcrumb-item"><a href="./Estimate_Page.html"><span class="nav-label">Flu Statistics</span> <i class="fa fa-bar-chart link-icon" aria-hidden="true"></i></a></li>
           <li class="breadcrumb-item active" aria-current="page"><a href="./Vaccine_Page.html"><span class="nav-label">Find a Vaccine</span><i class="fa fa-map-marker link-icon" aria-hidden="true"></i></i></a></li>
         </ol>
@@ -63,7 +63,6 @@
                             <h2 id="flu-shot-location-words">Here are the flu shot providers near your location. . . </h2>
                             <div class="map">
                                 <div id="locationMap"></div>
-                                
                                 <!-- <iframe src="https://www.google.com/maps/d/embed?mid=1Apq9gbzIZluWkjtr-7uPJZEGOwJ3vXVX" width= "80%" height="500" border="0">Loading...</iframe> -->
                             </div>
 
@@ -84,7 +83,6 @@
                         .text(function(d) { return d; });
                         });
                         </script>
-                        
                     </section>
             </div>
         </div>
