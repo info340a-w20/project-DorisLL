@@ -1,0 +1,143 @@
+.navbar-brand {
+    font-size: 2.0rem;
+    color: whitesmoke;
+}
+
+.navbar-light .navbar-brand {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: whitesmoke !important;
+    text-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+span{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: whitesmoke;
+}
+
+a {
+    color: darkslategrey;
+    font-weight: bold;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(153, 139, 139, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+
+.bg-light {
+    background-color: darkred !important;
+}
+
+.card-header {
+    background-color:rgb(25, 25, 83);
+    color: whitesmoke;
+    box-shadow: 0 4px 8px 0 rgba(153, 139, 139, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+header {
+    box-shadow: 0 4px 8px 0 rgba(153, 139, 139, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+body {
+    color: navy;
+}
+
+img {
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-weight: lighter;
+}
+
+h3 {
+    color: rgb(25, 25, 83);
+    font-weight: lighter;
+    text-decoration: underline;
+    padding: 5px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    margin-left: 25%;
+    margin-right: 25%;
+    width: 50%;
+}
+
+h4 {
+    font-weight: lighter;
+}
+
+footer {
+    background-color: darkred;
+    color: whitesmoke;
+    padding: 20px;
+    margin: 0%;
+    box-shadow: 0 4px 8px 0 rgba(153, 139, 139, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.card-body {
+    background-color: aliceblue;
+}
+
+input {
+    background-color: slategrey;
+}
+
+.vac {
+    color: dimgrey;
+}
+
+.fa-stethoscope {
+    color: whitesmoke;
+}
+
+.flu-shot-loc {
+    color: black;
+    font-weight: 500;
+}
+
+.list-of-places {
+    font-size: medium;
+ }
+
+#flu-shot-location-words {
+    width: fit-content;
+}
+
+.list-of-places {
+    border-image-width: inherit;
+}
+
+
+table {
+    border-collapse: collapse;
+    border: 4px lightblue;
+    font: 12px sans-serif;
+    width: 100%
+    }
+td {
+    border: 1px black solid;
+    padding: 5px;
+                }
+
+#map { 
+    height: 400px;
+    width: 600px;
+    padding-bottom: 20%;
+ }
+
+#list-Locations {
+    align-content: center;
+}
+table tr:first-child {
+    font-weight: bold;
+    color: black;
+}
+
+section {
+    padding-bottom: 20%;
+}
