@@ -35,23 +35,23 @@ p, h3, h4, h1.navbar-brand{
     font-size: 2.0rem;
 }
 
+.card-deck {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
 .card {
     box-shadow: 0 4px 8px 0 rgba(153, 139, 139, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.card-header h2 {
-    padding-left: 10%;
-    padding-right: 10%;
-}
 
 .bg-light {
     background-color: darkred !important;
 }
 
 .card-header {
-    background-color:rgb(25, 25, 83);
     color: whitesmoke;
-    box-shadow: 0 4px 8px 0 rgba(153, 139, 139, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    /* box-shadow: 0 4px 8px 0 rgba(153, 139, 139, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
 
 }
 
@@ -80,11 +80,6 @@ img {
 
 
 h3, h2 {
-    color: rgb(25, 25, 83);
-    margin-top: 25px;
-    margin-bottom: 25px;
-    margin-left: 25%;
-    margin-right: 25%;
     position: inherit;
 }
 
@@ -170,6 +165,14 @@ li.breadcrumb-item, li.contact {
     display: hidden;
 }
 
+/*for styling header*/
+.container {
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-left: 0%;
+    margin-right: 0%;
+}
+
 /*for styling estimate page*/
 .btn {
     color: #fff;
@@ -205,18 +208,17 @@ form {
     position: relative;
 }
 
-.vaccine-card h2 {
-    margin-left: 25%;
-    margin-right: 25%;
-}
 
-.vaccine-card .card-text {
-    font-size: 1.5em;
-}
 
 .btn, input {
     height: 2.rem;
     width: 2.rem;
+}
+
+svg {
+    overflow: hidden;
+    vertical-align: middle;
+    margin-left: 40%;
 }
 
 @media (min-width: 598px) {
