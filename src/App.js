@@ -10,6 +10,9 @@ import { EstimatePage } from './estimatePage';
 
 import { IntroPage } from './IntroPage';
 
+import { VaccinePage } from './VaccinePage';
+
+
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -28,6 +31,8 @@ export class App extends Component {
                 <Link to="/Estimate_Page">Estimate Page</Link>
                 <Route exact path="/" component={ IntroPage } />
                 <Route path="/Estimate_Page" component={ EstimatePage } />
+                <Route exact path="/" component={ IntroPage } />
+                <Route path="/Vaccine_page" component={ VaccinePage } />
 
               </div>
 
