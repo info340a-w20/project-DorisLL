@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/react-DorisLL/static/css/main.bf14de78.chunk.css",
+    "main.js": "/react-DorisLL/static/js/main.9ee9e0b1.chunk.js",
+    "main.js.map": "/react-DorisLL/static/js/main.9ee9e0b1.chunk.js.map",
+    "runtime-main.js": "/react-DorisLL/static/js/runtime-main.03ecb10c.js",
+    "runtime-main.js.map": "/react-DorisLL/static/js/runtime-main.03ecb10c.js.map",
+    "static/css/2.10c3ffbc.chunk.css": "/react-DorisLL/static/css/2.10c3ffbc.chunk.css",
+    "static/js/2.c634a876.chunk.js": "/react-DorisLL/static/js/2.c634a876.chunk.js",
+    "static/js/2.c634a876.chunk.js.map": "/react-DorisLL/static/js/2.c634a876.chunk.js.map",
+    "index.html": "/react-DorisLL/index.html",
+    "precache-manifest.d26bff6d1bb8326f6fa5a60106a9f09d.js": "/react-DorisLL/precache-manifest.d26bff6d1bb8326f6fa5a60106a9f09d.js",
+    "service-worker.js": "/react-DorisLL/service-worker.js",
+    "static/css/2.10c3ffbc.chunk.css.map": "/react-DorisLL/static/css/2.10c3ffbc.chunk.css.map",
+    "static/css/main.bf14de78.chunk.css.map": "/react-DorisLL/static/css/main.bf14de78.chunk.css.map",
+    "static/js/2.c634a876.chunk.js.LICENSE.txt": "/react-DorisLL/static/js/2.c634a876.chunk.js.LICENSE.txt",
+    "static/media/mdb.css": "/react-DorisLL/static/media/arrow_right.8ef6a08c.svg",
+    "static/media/all.min.css": "/react-DorisLL/static/media/fa-solid-900.cdfec5cf.woff"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.03ecb10c.js",
+    "static/css/2.10c3ffbc.chunk.css",
+    "static/js/2.c634a876.chunk.js",
+    "static/css/main.bf14de78.chunk.css",
+    "static/js/main.9ee9e0b1.chunk.js"
+  ]
+}
