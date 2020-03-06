@@ -12,8 +12,8 @@ export class SingleCard extends React.Component {
     //this.props.text
     render() {
         return (
-            <Card class = "card" bg = 'primary' border = 'primary'>
-                <Card.Header class="card-header" as="h2">{this.props.header}</Card.Header>
+            <Card class = "card">
+                <Card.Header class="card-header" as="h2" id="card-header">{this.props.header}</Card.Header>
                 <Card.Body class="card-body">
                     <Card.Text>
                         {this.props.text}}

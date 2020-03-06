@@ -51,8 +51,13 @@ p, h3, h4, h1.navbar-brand{
 
 .card-header {
     color: whitesmoke;
+    text-align: center;
     /* box-shadow: 0 4px 8px 0 rgba(153, 139, 139, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
 
+}
+
+.card-text {
+    text-align: center;
 }
 
 header {
@@ -61,14 +66,6 @@ header {
 
 body {
     color: navy;
-}
-
-#myChart, #myChart2 {
-    width: 60%;
-    padding-left: 20%;
-    padding-right: 20%;
-    margin-bottom: 20px;
-    display: block;
 }
 
 img {
@@ -83,8 +80,14 @@ h3, h2 {
     position: inherit;
 }
 
-h2 {
+.card-header, #mapped-cases {
+    font-weight: 100;
     color: whitesmoke;
+}
+
+#mapped-cases {
+    display: block;
+    color: navy;
 }
 
 h4 {
@@ -131,7 +134,8 @@ table {
     border-collapse: collapse;
     border: 4px lightblue;
     font: 12px sans-serif;
-    width: 100%
+    width: 100%;
+    margin-top: 2%;
     }
 
 td {
@@ -141,8 +145,7 @@ td {
 
 #map { 
     height: 400px;
-    width: 600px;
-    padding-bottom: 20%;
+    text-align: center;
  }
 
 #list-Locations {
@@ -157,39 +160,44 @@ section{
     padding-bottom:20% ;
 }
 
-#mapped-cases {
-    display: none;
-}
-
 li.breadcrumb-item, li.contact {
     display: hidden;
 }
 
-/*for styling header*/
-.container {
-    padding-left: 0px;
-    padding-right: 0px;
-    margin-left: 0%;
-    margin-right: 0%;
+#form-chart-group {
+    display: inline-flex;
 }
 
-/*for styling estimate page*/
-.btn {
+EstimateChart {
+    float: left;
+}
+
+/* for styling estimate page
+.button {
     color: #fff;
     background-color: navy;
     border-color: slategray;
     border-width: 3px;
+} */
+
+button, #submitButton, input {
+    background-color: aliceblue;
+    border-radius: 10px;
+    border-width: thin;
+    /* box-shadow: 0 2px 4px 0 aliceblue; */
+    color: navy;
+    font-weight: bolder;
+    height: 3rem;
+    width: 10rem;
 }
 
-.btn, .hguess {
-    margin: 10px;
-    margin-left: 30%;
-    margin-right: 30%;
-    display: inline;
+input {
+    height: 2rem;
+    width: 5rem;
 }
 
 form {
-    background-color: aliceblue;
+    text-align: center;
     padding: 3%;
     margin-left: 20%;
     margin-right: 20%;
@@ -208,17 +216,49 @@ form {
     position: relative;
 }
 
+#navbar {
+    background-color: darkred !important;
+}
 
+.card-deck, form {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 10%;
+    margin-right: 10%;
+}
 
-.btn, input {
-    height: 2.rem;
-    width: 2.rem;
+#homepage-cards {
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 svg {
     overflow: hidden;
     vertical-align: middle;
     margin-left: 40%;
+}
+
+.card-header {
+    color: whitesmoke;
+    background-color: navy;
+    text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(153, 139, 139, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+button {
+    background-color: aliceblue;
+    border-radius: 10px;
+    /* box-shadow: 0 2px 4px 0 aliceblue; */
+}
+
+#card-header {
+    background-color: navy;
+}
+
+#descriptive-paragraph {
+    text-align: center;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 @media (min-width: 598px) {

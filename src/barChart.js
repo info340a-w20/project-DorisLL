@@ -8,15 +8,18 @@ export class EstimateBarChart extends React.Component {
         super(props)
     }
 
+    //expects stateObject
+
     render() {
         //expects an array of objects
         //this.props.data will either be incubation
+        let data = [{name: 'Your Estimate', value: this.props.inputtedGuess}, {name: 'Average Estimate', value: this.props.averageGuess}, {name: 'Actual Value', value: this.props.actualValue}];
         return (
             <div>
-                <BarChart width={600} height={300} data={this.props.data}>
-                  <XAxis dataKey={this.props.name}/>
+                <BarChart width={600} height={300} data={data}>
+                  <XAxis dataKey="name"/>
                   <YAxis />
-                  <Bar type="monotone" dataKey={this.props.value} barSize={30} fill="#8884d8"/>
+                  <Bar type="monotone" dataKey="value" barSize={30} fill="navy" />
                 </BarChart>
             </div>
         )

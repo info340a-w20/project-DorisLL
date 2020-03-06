@@ -1,14 +1,6 @@
 import React from 'react';
 
 export class InputForms extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {value: ''};
-    }
-
-    // handleChange(event) {
-    //     this.setState({value: event.target.value});
-    // }
 
     render() {
         let inputBoxes = [];
@@ -19,7 +11,7 @@ export class InputForms extends React.Component {
                     <label>
                         {input[key]}
                         {/*the state at the key will be assigned*/}
-                        <input type="number" onKeyDown = {this.handleChange}/>
+                        <input type="number" onChange={(e) => this.props.onUpdate(e)}/>
                     </label>
                 )
                 inputBoxes.push(newInput);
@@ -29,7 +21,7 @@ export class InputForms extends React.Component {
         return (
             <form className="form">
                 {inputBoxes} <br/>
-                <input type="submit" value="submit"/>
+                <button type = "button" id = "submitButton" onClick={(e) => this.props.onClick(e)}>Submit</button>
             </form>
         )
     }

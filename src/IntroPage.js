@@ -28,13 +28,8 @@ export class IntroPage extends React.Component {
         return (
           <div>
             <PageHeader />
-            <Deck cardContent={this.state.cardContent}/>
-            <div className="container"> 
-                <div className="row">
-                    <h3>Mapped Cases of Influenza in the US:</h3>
-                    <img id="us-map" src="./imgs/map.jpg" alt="US Map"/>
-                </div>
-            </div>
+            <Deck id="homepage-cards" cardContent={this.state.cardContent}/>
+            
             <PageFooter />
           </div>
         );
