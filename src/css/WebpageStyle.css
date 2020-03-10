@@ -11,7 +11,9 @@
 
 span{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: whitesmoke;
+    /* color: whitesmoke; */
+    color: navy;
+    font-weight: bold;
 }
 
 a {
@@ -143,9 +145,15 @@ td {
     padding: 5px;
                 }
 
-#map { 
+/* #map { 
     height: 400px;
+    width: 450px;
     text-align: center;
+ } */
+
+ .leaflet-container {
+     width: 100%;
+     height: 400px;
  }
 
 #list-Locations {
@@ -251,7 +259,7 @@ button {
     /* box-shadow: 0 2px 4px 0 aliceblue; */
 }
 
-#card-header {
+#card-header, #SearchCardHeader {
     background-color: navy;
 }
 
@@ -292,4 +300,17 @@ button {
 }
 section {
     padding-bottom: 20%;
+}
+
+#SearchCardHeader {
+    margin-top: 1rem;
+}
+
+
+.MuiTableCell-root-155:last-child {
+    padding: 20px;
+}
+
+#vaccine-info {
+    margin:20px;
 }

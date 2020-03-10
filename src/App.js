@@ -15,7 +15,7 @@ import { EstimatePage } from './estimatePage';
 
 import { IntroPage } from './IntroPage';
 
-// import { VaccinePage } from './VaccinePage';
+import { VaccinePage } from './VaccinePage';
 
 
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
@@ -35,11 +35,12 @@ export class App extends Component {
                   <MDBBreadcrumb>
                     <MDBBreadcrumbItem><Link to="/"><span className="nav-label">Home</span></Link></MDBBreadcrumbItem>
                     <MDBBreadcrumbItem><Link to="/Estimate_Page"><span className="nav-label">Flu Statistics</span></Link></MDBBreadcrumbItem>
-                    <MDBBreadcrumbItem><a href="./Vaccine_Page.html"><span className="nav-label">Find a Vaccine</span></a></MDBBreadcrumbItem>
+                    <MDBBreadcrumbItem><Link to="/Vaccine_Page"><span className="nav-label">Find a Vaccine</span></Link></MDBBreadcrumbItem>
                   </MDBBreadcrumb>
                 </MDBContainer>
                 <Route exact path="/" component={ IntroPage } />
                 <Route path="/Estimate_Page" component={ EstimatePage } />
+                <Route path="/Vaccine_Page" component={ VaccinePage } />
               </div>
 
             </Router>

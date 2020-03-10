@@ -12,9 +12,9 @@ export class SingleCard extends React.Component {
     //this.props.text
     render() {
         return (
-            <Card class = "card">
-                <Card.Header class="card-header" as="h2" id="card-header">{this.props.header}</Card.Header>
-                <Card.Body class="card-body">
+            <Card className = "card">
+                <Card.Header className="card-header" as="h2" id="card-header">{this.props.header}</Card.Header>
+                <Card.Body className="card-body">
                     <Card.Text>
                         {this.props.text}}
                     </Card.Text>
