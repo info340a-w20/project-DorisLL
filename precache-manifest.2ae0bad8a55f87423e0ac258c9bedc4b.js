@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "cb00439b0bc79508a7de5c2f442f7c22",
+    "revision": "6678a8b66ee56efbf912579141c2c429",
     "url": "/project-DorisLL/index.html"
   },
   {
-    "revision": "7eda2a3cf1f6f0b82168",
+    "revision": "4934048017591ce044e2",
     "url": "/project-DorisLL/static/css/2.01fea9f7.chunk.css"
   },
   {
-    "revision": "c9b881bb1c333821d9e2",
-    "url": "/project-DorisLL/static/css/main.07ce065c.chunk.css"
+    "revision": "29f708d49955de6056a8",
+    "url": "/project-DorisLL/static/css/main.b97e778b.chunk.css"
   },
   {
-    "revision": "7eda2a3cf1f6f0b82168",
-    "url": "/project-DorisLL/static/js/2.8c1c51ca.chunk.js"
+    "revision": "4934048017591ce044e2",
+    "url": "/project-DorisLL/static/js/2.2da6a196.chunk.js"
   },
   {
     "revision": "dbbf32ae3ae288d07a10577a8d373b95",
-    "url": "/project-DorisLL/static/js/2.8c1c51ca.chunk.js.LICENSE.txt"
+    "url": "/project-DorisLL/static/js/2.2da6a196.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "c9b881bb1c333821d9e2",
-    "url": "/project-DorisLL/static/js/main.7f5d232f.chunk.js"
+    "revision": "29f708d49955de6056a8",
+    "url": "/project-DorisLL/static/js/main.85c8d29a.chunk.js"
   },
   {
     "revision": "20f50feaf2d612da47cb",
