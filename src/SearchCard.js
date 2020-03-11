@@ -18,6 +18,7 @@ export class SearchCard extends React.Component {
         this.setState({
             input: value
         })
+        // this.props.ReturnInputValue(this.state.input); // Callback for VaccinePage
     }
 
     //this.props.header
@@ -30,15 +31,15 @@ export class SearchCard extends React.Component {
                 </Card.Header>
                 <Card.Body className="card-body">
                     <div className="col-sm">
-                        <Card.Text className="card-text vac">
+                        <Card.Text className="card-text" id="SearchCardText">
                             {this.props.text}
                         </Card.Text>
                         <InputBox items={ZipName} 
                                 changeValue={this.onChangeInputValue.bind(this)} /> 
+                                {/* <p> {this.state.input}</p> */}
                     </div>  
                 </Card.Body>
             </Card>
         );
     }
 }
-

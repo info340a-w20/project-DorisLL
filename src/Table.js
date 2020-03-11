@@ -38,11 +38,10 @@ const styles = theme => ({
   },
 });
 
-
-class MuiVirtualizedTable extends React.PureComponent {
+class MuiVirtualizedTable extends React.Component {
   static defaultProps = {
     headerHeight: 48,
-    rowHeight: 48,
+    rowHeight: 52,
   };
 
   getRowClassName = ({ index }) => {
@@ -126,14 +125,25 @@ class MuiVirtualizedTable extends React.PureComponent {
     );
   }
 }
-
 const VirtualizedTable = withStyles(styles)(MuiVirtualizedTable);
 
 
-const rows = require('./data/csvjson.json');
+const allrows = require('./data/csvjson.json');
 
 export class ReactVirtualizedTable extends React.Component {
+  constructor(props) {
+    super(props)
+  };
+
   render() {
+    let rows = [];
+    let wants = 60601 //this.props.input; //Q: how to pass the value from two-layers deeper to here?
+    for (var i = 0; i < allrows.length; i++) {
+      let SingleRow = allrows[i];
+      if (SingleRow.ZIP == wants) {
+        rows.push(SingleRow);
+      }
+    }
     return (
       <Paper style={{ height: 200, width: '100%' }}>
         <VirtualizedTable
@@ -141,32 +151,34 @@ export class ReactVirtualizedTable extends React.Component {
           rowGetter={({i, index }) => rows[index]}
           columns={[
             {
-              width: '25%',
+              width: '180',
               label: 'Name',
               dataKey: 'Name',
             },
             {
-              width: '25%',
+              width: '160',
               label: 'Address',
               dataKey: 'Address',
             },
             {
-              width: '10%',
+              width: '100',
               label: 'City',
               dataKey: 'City',
             },
             {
-              width: '15%',
+              width: '100',
               label: 'Latitude',
               dataKey: 'Latitude',
+              numeric: true,
             },
             {
-              width: '15%',
+              width: '100',
               label: 'Longitude',
               dataKey: 'Longitude',
+              numeric: true,
             },
             {
-              width: '10%',
+              width: '100',
               label: 'ZIP',
               dataKey: 'ZIP',
               numeric: true,
@@ -177,3 +189,104 @@ export class ReactVirtualizedTable extends React.Component {
     );
   }
 }
+
+
+
+
+
+
+
+
+
+
+// import React from 'react';
+// import './css/WebpageStyle.css'
+
+// const data = require('./data/csvjson.json')
+// let headers = ['Name', 'Address', 'City', 'Latitude', 'Longitude', 'ZIP']
+// export class TableDisplay extends React.Component {
+
+//   createTable () {
+//     let table = document.createElement('table');
+//     })
+//   }
+
+// render () {
+//   let headRow = document.createElement('tr');
+
+//   headers.forEach(header => {
+//     let header = document.createElement('th');
+//     let textNode = document.createTextNode(header);
+//     header.appendChild()
+  
+//   return (
+//     <table>
+
+
+//     </table>
+//   )
+// }
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import React from 'react';
+// import './css/WebpageStyle.css'
+
+// const data = require('./data/LocArray.json')
+
+// this.props.input <-- inputZip
+// export class TableDisplay extends React.Component {
+//   constructor(props) {
+//     super(props)
+//     // this.state = {
+//     //   selectedData:[]
+//     // };
+
+//   };
+
+//   render() {
+//     let selectedZip = this.props.input;
+//     let Singlerow = '';
+//     let SelectedRows = [];
+//     for(var i = 0; i < data.length; i++) {
+//       Singlerow = data[i];
+//       let rowZip = Singlerow[5];
+//       if (rowZip === selectedZip) {
+//         SelectedRows.push(Singlerow);
+//       }
+//     }
+//     SelectedRows.forEach(row => {
+            
+//     })  
+  
+//     return (
+//       <table>
+//         <thead>
+//           <th>Name</th>
+//           <th>Address</th>
+//           <th>City</th>
+//           <th>Latitude</th>
+//           <th>Longitude</th>
+//           <th>ZIP</th>
+//       </thead>
+//         <tbody>
+//           SelectedRows.forEach(row => {
+
+//           })          
+
+//         </tbody>
+//       </table>
+//     )
+//   }
+// }

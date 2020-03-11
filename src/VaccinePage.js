@@ -9,6 +9,19 @@ import './css/WebpageStyle.css'
 
 
 export class VaccinePage extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            input: '',
+          };
+    }
+
+    ReturnInputValue (value) {
+        this.setState({
+            input: value
+        })
+    }
+
     render() {
         return (
             <div >
@@ -20,7 +33,8 @@ export class VaccinePage extends React.Component {
                 <div className="row">
                     {/* Vaccine Finder Card */}
                     <div className= "text-center col-md-12 col-sm-12">
-                        <SearchCard id="Vaccine-Card" header="Vaccine Finder" text="Find flu shots near you?"></SearchCard>
+                        <SearchCard id="Vaccine-Card" header="Vaccine Finder" text="Find flu shots near you?"
+                                    changeStoredValue={this.ReturnInputValue.bind(this)}></SearchCard>
                     </div>
 
                     <div className="container">
@@ -28,9 +42,12 @@ export class VaccinePage extends React.Component {
                             <div className="col" id="vaccine-info" >
                                 <h2 id='flu-shot-location-words' text-align="center">Flu shot providers nearby:</h2>
                                 <div  class="leaflet-container">
-                                <VaccineMap />
+                                    <VaccineMap />
                                 </div>
-                                <ReactVirtualizedTable id='list-providers'/>
+                                <div>
+                                    <ReactVirtualizedTable input={this.state.input} id='list-providers'/>
+                                    <p>{this.state.input}</p>
+                                </div>
                             </div>
                             
                         </div>

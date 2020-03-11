@@ -53,7 +53,8 @@ renderSuggestions () {
             </div>
           </div>
           <button type="button" id="GoButton" 
-                  onClick={this.onZipChanged.bind(this)} 
+                  onClick={this.onZipChanged.bind(this)}
+                  // onClick={}
                   disabled={!this.state.input}>Go</button>
         </form>
 
