@@ -29,6 +29,7 @@ export class VaccinePage extends React.Component {
                 <div>
                     <PageHeader />
                 </div>
+
                 {/* Body */}
                 <div className="row">
                     {/* Vaccine Finder Card */}
@@ -36,16 +37,16 @@ export class VaccinePage extends React.Component {
                         <SearchCard id="Vaccine-Card" header="Vaccine Finder" text="Find flu shots near you?"
                                     changeStoredValue={this.ReturnInputValue.bind(this)}></SearchCard>
                     </div>
-
+                    {/* Map + Table */}
                     <div className="container">
                         <div className="row">
                             <div className="col" id="vaccine-info" >
                                 <h2 id='flu-shot-location-words' text-align="center">Flu shot providers nearby:</h2>
                                 <div  class="leaflet-container">
-                                    <VaccineMap />
+                                    <VaccineMap zip={this.state.input}/>
                                 </div>
                                 <div>
-                                    <ReactVirtualizedTable input={this.state.input} id='list-providers'/>
+                                    <ReactVirtualizedTable zip={this.state.input} id='list-providers'/>
                                     <p>{this.state.input}</p>
                                 </div>
                             </div>
@@ -54,6 +55,7 @@ export class VaccinePage extends React.Component {
                         
                     </div>
                 </div>
+
                 {/* Footer */}
                 <div>
                 <PageFooter />

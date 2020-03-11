@@ -5,7 +5,19 @@ import './css/WebpageStyle.css';
 
 const data = require('./data/csvjson.json')
 export class VaccineMap extends React.Component {
-  
+  constructor(props) {
+    super(props)
+    this.state = {
+        input: '',
+      };
+}
+
+  upDateInputValue () { // Save the selected zip from props (passing in from VaccinePage) and save as state
+    let propsValue = this.props.zip
+    this.setState({
+        input: propsValue
+    })
+  }
 
   render() {
 

@@ -7,7 +7,6 @@ import Paper from '@material-ui/core/Paper';
 import { AutoSizer, Column, Table } from 'react-virtualized';
 import './css/WebpageStyle.css'
 
-
 const styles = theme => ({
   flexContainer: {
     display: 'flex',
@@ -133,7 +132,18 @@ const allrows = require('./data/csvjson.json');
 export class ReactVirtualizedTable extends React.Component {
   constructor(props) {
     super(props)
-  };
+    this.setState({
+      input: ''
+    });
+  }
+
+  upDateInputValue () { // Save the selected zip from props (passing in from VaccinePage) and save as state
+    let propsValue = this.props.zip
+    this.setState({
+        input: propsValue
+    })
+  }
+
 
   render() {
     let rows = [];
