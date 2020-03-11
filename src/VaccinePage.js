@@ -6,8 +6,6 @@ import {PageFooter} from './PageFooter'
 import {PageHeader} from './PageHeader'
 import './css/WebpageStyle.css'
 
-
-
 export class VaccinePage extends React.Component {
     constructor(props) {
         super(props)
@@ -15,12 +13,6 @@ export class VaccinePage extends React.Component {
             input: '',
           };
     }
-
-    // ReturnInputValue (value) {
-    //     this.setState({
-    //         input: value
-    //     })
-    // }
 
     //Callback from InputBox and set the state input for SearchCard when button clicked
     onChangeInputValue (value) {
@@ -56,7 +48,6 @@ export class VaccinePage extends React.Component {
                                 </div>
                                 <div>
                                     <ReactVirtualizedTable zip={this.state.input} id='list-providers'/>
-                                    <p>{this.state.input}</p>
                                 </div>
                             </div>
                             

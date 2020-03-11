@@ -8,23 +8,10 @@ import ZipName from './ZipName';
 export class SearchCard extends React.Component {
     constructor(props) {
         super(props)
-        this.state = {
-            input: '',
-          };
     }
-
-    //Callback from InputBox and set the state input for SearchCard when button clicked
-    onChangeInputValue (value) {
-        this.setState({
-            input: value
-        })
-        // this.props.changeStoredValue(this.state.input); // Callback for VaccinePage
-    }
-
     //this.props.header
     //this.props.text
     render() {
-        console.log(this.state.input)
         return (
             <Card className="vaccine-card card mb-4">
                 <Card.Header className= "card-header" id="SearchCardHeader">
@@ -38,7 +25,6 @@ export class SearchCard extends React.Component {
                         <InputBox items={ZipName} 
                                 changeValue={this.props.changeStoredValue} // Callback for VaccinePage
                         /> 
-                        <p> {this.state.input}</p>
                     </div>  
                 </Card.Body>
             </Card>
