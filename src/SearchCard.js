@@ -8,6 +8,17 @@ import ZipName from './ZipName';
 export class SearchCard extends React.Component {
     constructor(props) {
         super(props)
+        this.state = {
+            input: '',
+          };
+    }
+
+    //Callback from InputBox and set the state input for SearchCard when button clicked
+    onChangeInputValue (value) {
+        this.setState({
+            input: value
+        })
+        // this.props.ReturnInputValue(this.state.input); // Callback for VaccinePage
     }
     //this.props.header
     //this.props.text
