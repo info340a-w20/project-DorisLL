@@ -1,51 +1,62 @@
-import React, {Component} from 'react';
-import TextField from '@material-ui/core/TextField';
-import Autocomplete from '@material-ui/lab/Autocomplete';
-// import TextField from '@material-ui/core/TextField';
+import React from 'react';
 import './css/WebpageStyle.css'
 
-
-
-
 export class InputBox extends React.Component {
-    constructor(props) {
-      super(props);
-      this.state = {
-        tags: []
-      };
-      this.onTagsChange = this.onTagsChange.bind(this);
-    }
-  
-    onTagsChange = (event, values) => {
-      this.setState({
-        tags: values
-      }, () => {
-        // This will output an array of objects
-        // given by Autocompelte options property.
-        console.log(this.state.tags);
-      });
-    }
+  constructor (props) {
+    super(props);
+    this.state = {
+      suggestions:[],
+      input:'',
+    };
+  }
 
-    render() {
-      // const list= require('./data/csvjson.json')
-        const list = [
-            { title: 'The Shawshank Redemption', year: 1994 },
-            {Name:'Walgreens', Address: '4710 S WESTERN AVE', City: 'Chicago', Latitude: 41.807899, Longitude: -87.684699, ZIP: 60609},
-            {Name:'19th Ward Office', Address: '10402 S. Western Ave.', City: 'Chicago', Latitude: 41.70439, Longitude: -87.68197, ZIP: 60643},
-            {Name:'20th Ward-Whole Foods Family Flu Day', Address: '832 W. 63rd St.', City: 'Chicago', Latitude: 41.78059, Longitude: -87.64621, ZIP: 60621},
-            {Name:'Walgreens', Address: '711 W NORTH AVE STE 204', City: 'Chicago', Latitude: 41.91082, Longitude: -87.64665, ZIP: 60610}
-          ];
-        return (
-          <div >
-              <Autocomplete
-                  id="input-box"
-                  options={list}
-                  getOptionLabel={option => option.ZIP}
-                  style={{ width: "100%" }}
-                  renderInput={params => <TextField {...params} label="Zipcode" variant="outlined" />}
-              />
+// Renew state as user type
+onZipChanged = (e) => {
+  const { items } = this.props;
+  const value = e.target.value;
+  let suggestions = [];
+  if(value.length > 0) {
+    const regex = new RegExp(`^${value}`, 'i');
+    suggestions = items.sort().filter(v => regex.test(v));
+  }
+  this.setState(() => ({ suggestions, input: value }));
+  this.props.changeValue(this.state.input);
+}
+// Enable click for suggested values
+suggestionSelected (value) {
+  this.setState(() => ({
+    input: value,
+    suggestions: [],
+  }))
+}
+// Return suggested values
+renderSuggestions () {
+  const { suggestions } = this.state;
+  if(suggestions.length === 0) {
+    return null;
+  } 
+  return (
+    <ul>
+      {suggestions.map((item) => <li onClick={() => this.suggestionSelected(item)}>{item}</li>)}
+    </ul>
+  )
+ }
+
+  render() {
+    const { input } = this.state;
+      return (
+        <form>
+          <div className="Input-Box">
+            <div className="InputBox">
+              <input value={input} onChange={this.onZipChanged} type="number" />
+              {this.renderSuggestions()}
+            </div>
           </div>
-            
-        );
-    }
+          <button type="button" id="GoButton" 
+                  onClick={this.onZipChanged.bind(this)} 
+                  disabled={!this.state.input}>Go</button>
+        </form>
+
+    );
+  }
 }

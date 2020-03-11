@@ -3,12 +3,21 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {Card} from 'react-bootstrap';
 import './css/WebpageStyle.css'
 import {InputBox} from './InputBox'
-
-import {GoButton} from './Button'
+import ZipName from './ZipName';
 
 export class SearchCard extends React.Component {
     constructor(props) {
         super(props)
+        this.state = {
+            input: '',
+          };
+    }
+
+    //Callback from InputBox and set the state input for SearchCard when button clicked
+    onChangeInputValue (value) {
+        this.setState({
+            input: value
+        })
     }
 
     //this.props.header
@@ -24,14 +33,9 @@ export class SearchCard extends React.Component {
                         <Card.Text className="card-text vac">
                             {this.props.text}
                         </Card.Text>
-                        <form>
-                            <InputBox /> 
-                            <GoButton color="primary" text= "Go" />
-                        </form>
-                        
-                        
-                    </div>
-                    
+                        <InputBox items={ZipName} 
+                                changeValue={this.onChangeInputValue.bind(this)} /> 
+                    </div>  
                 </Card.Body>
             </Card>
         );
