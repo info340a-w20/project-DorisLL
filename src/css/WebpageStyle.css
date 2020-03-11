@@ -278,8 +278,6 @@ button {
         font-size: 2.0rem;
     }
 
-
-
     card .fa{
         display: inline;
     }
@@ -306,11 +304,62 @@ section {
     margin-top: 1rem;
 }
 
-
 .MuiTableCell-root-155:last-child {
     padding: 20px;
 }
 
 #vaccine-info {
     margin:20px;
+}
+
+.InputBox {
+    width: 100%;
+    border:1px solid grey;
+    box-shadow: 0 0 0 1px rgba(0,0,0,.1), 0 2px 4px 1px rgba(0,0,0,.18);
+    color: rgba(0, 0, 0, .73);
+}
+ 
+.InputBox input {
+    width: 100%;
+    border:none;
+    color: rgba(0, 0, 0, .73);
+    margin: 0;
+    padding: 8px 3px;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.Input-Box {
+    margin: 0 auto 0 auto;
+    width: 80%;
+}
+
+.Input-Box ul {
+    list-style-type: none;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    border-top:1px solid grey;
+}
+
+.InputBox ul::before {
+    content:"";
+
+}
+
+.Input-Box li {
+    padding: 8px 3px;
+    cursor: pointer;
+}
+
+.Input-Box li:hover {
+    text-decoration: underline;
+    background-color: rgb(136, 187, 233);
+}
+
+#GoButton {
+    margin-top: 10px;
+    width: 40%;
+    background-color: navy;
+    color: white;
 }
