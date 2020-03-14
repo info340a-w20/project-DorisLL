@@ -2,9 +2,7 @@ import React from "react";
 import { Map, Marker, Popup, TileLayer } from 'react-leaflet';
 // import { Icon, FeatureGroup } from "leaflet";
 // import MarkerClusterGroup from 'react-leaflet-markercluster';
-
 import './css/WebpageStyle.css';
-
 
 const data = require('./data/csvjson.json')
 
@@ -23,59 +21,38 @@ export class VaccineMap extends React.Component {
     })
   }
 
-
-  // createMarkers() {
-  //   let selected = [];
-  //   let wants = this.props.zip; //Q: how to pass the value from two-layers deeper to here?
-  //   for (var i = 0; i < data.length; i++) {
-  //     let selectedSingle = data[i];
-  //     if (selectedSingle.ZIP == wants) {
-  //       selected.push(selectedSingle);
-  //     }
-  //   }
-
-  //   return (
-  //     <FeatureGroup ref={this.groupRef}>
-  //         {selected.map(marker => (
-  //           <Marker key= {marker.Name} position={[marker.Latitude, marker.Longitude]}>
-  //           <Popup>
-  //             <span>
-  //               <h4>{marker.name}</h4>
-  //             </span>
-  //           </Popup>
-  //           </Marker>
-  //         ))}
-  //   </FeatureGroup>
-
-      // <div>
-      //   {selected.map(marker => (
-      //     <Marker key= {marker.Name} position={[marker.Latitude, marker.Longitude]}></Marker>
-      //   ))}
-
-      // </div>
-  //   )
-  // }
-
   render() {
-
     let selected = [];
-    let wants = this.props.zip; //Q: how to pass the value from two-layers deeper to here?
+    let longLatGroup = [];
+    let wants = this.props.zip;
     for (var i = 0; i < data.length; i++) {
       let selectedSingle = data[i];
       if (selectedSingle.ZIP == wants) {
         selected.push(selectedSingle);
+        let longLat = [];
+        longLat.push(selectedSingle.Latitude);
+        longLat.push(selectedSingle.Longitude);
+        longLatGroup.push(longLat);
       }
+    }
+    let bound;
+    if (longLatGroup.length == 0) {
+      bound = window.L.latLngBounds([[19.50139, -161.75583], [64.85694, -68.01197]])
+    } else {
+      bound = window.L.latLngBounds(longLatGroup)
     }
 
     return (
-      <Map center={[40,-97]} zoom={4}>
+      <Map center={[40,-97]} zoom={4} bounds={bound}>
         <TileLayer
         url='https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=3xOm9QSSZNB2dK7qFbWh'
         attribution= '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'
       />
       createMarkers();
       {selected.map(marker => (
-        <Marker key= {marker.Name} position={[marker.Latitude, marker.Longitude]} />
+        <Marker key= {marker.Name} position={[marker.Latitude, marker.Longitude]}>
+          <Popup>{marker.Name}<br/>{marker.City}</Popup>
+        </Marker>
       ))}
       </Map>
     )

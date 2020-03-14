@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import { withStyles } from '@material-ui/core/styles';
 import TableCell from '@material-ui/core/TableCell';
@@ -18,7 +18,7 @@ const styles = theme => ({
     // https://github.com/bvaughn/react-virtualized/issues/454
     '& .ReactVirtualized__Table__headerRow': {
       flip: false,
-      // paddingRight: theme.direction === 'rtl' ? '0px !important' : undefined,
+      paddingRight: theme.direction === 'rtl' ? '0px !important' : undefined,
     },
   },
   tableRow: {
@@ -146,13 +146,14 @@ export class ReactVirtualizedTable extends React.Component {
 
   render() {
     let rows = [];
-    let wants =  this.props.zip; //Q: how to pass the value from two-layers deeper to here?
+    let wants =  this.props.zip; 
     for (var i = 0; i < allrows.length; i++) {
       let SingleRow = allrows[i];
       if (SingleRow.ZIP == wants) {
         rows.push(SingleRow);
       }
     }
+    let widthAvg =  window.innerWidth / 6;
     return (
       <Paper style={{ height: 200, width: '100%' }}>
         <VirtualizedTable
@@ -160,34 +161,35 @@ export class ReactVirtualizedTable extends React.Component {
           rowGetter={({i, index }) => rows[index]}
           columns={[
             {
-              width: '180',
+              width: widthAvg,
+
               label: 'Name',
               dataKey: 'Name',
             },
             {
-              width: '160',
+              width: widthAvg,
               label: 'Address',
               dataKey: 'Address',
             },
             {
-              width: '100',
+              width: widthAvg,
               label: 'City',
               dataKey: 'City',
             },
             {
-              width: '100',
+              width: widthAvg,
               label: 'Latitude',
               dataKey: 'Latitude',
               numeric: true,
             },
             {
-              width: '100',
+              width: widthAvg,
               label: 'Longitude',
               dataKey: 'Longitude',
               numeric: true,
             },
             {
-              width: '100',
+              width: widthAvg,
               label: 'ZIP',
               dataKey: 'ZIP',
               numeric: true,
@@ -198,104 +200,3 @@ export class ReactVirtualizedTable extends React.Component {
     );
   }
 }
-
-
-
-
-
-
-
-
-
-
-// import React from 'react';
-// import './css/WebpageStyle.css'
-
-// const data = require('./data/csvjson.json')
-// let headers = ['Name', 'Address', 'City', 'Latitude', 'Longitude', 'ZIP']
-// export class TableDisplay extends React.Component {
-
-//   createTable () {
-//     let table = document.createElement('table');
-//     })
-//   }
-
-// render () {
-//   let headRow = document.createElement('tr');
-
-//   headers.forEach(header => {
-//     let header = document.createElement('th');
-//     let textNode = document.createTextNode(header);
-//     header.appendChild()
-  
-//   return (
-//     <table>
-
-
-//     </table>
-//   )
-// }
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import React from 'react';
-// import './css/WebpageStyle.css'
-
-// const data = require('./data/LocArray.json')
-
-// this.props.input <-- inputZip
-// export class TableDisplay extends React.Component {
-//   constructor(props) {
-//     super(props)
-//     // this.state = {
-//     //   selectedData:[]
-//     // };
-
-//   };
-
-//   render() {
-//     let selectedZip = this.props.input;
-//     let Singlerow = '';
-//     let SelectedRows = [];
-//     for(var i = 0; i < data.length; i++) {
-//       Singlerow = data[i];
-//       let rowZip = Singlerow[5];
-//       if (rowZip === selectedZip) {
-//         SelectedRows.push(Singlerow);
-//       }
-//     }
-//     SelectedRows.forEach(row => {
-            
-//     })  
-  
-//     return (
-//       <table>
-//         <thead>
-//           <th>Name</th>
-//           <th>Address</th>
-//           <th>City</th>
-//           <th>Latitude</th>
-//           <th>Longitude</th>
-//           <th>ZIP</th>
-//       </thead>
-//         <tbody>
-//           SelectedRows.forEach(row => {
-
-//           })          
-
-//         </tbody>
-//       </table>
-//     )
-//   }
-// }
