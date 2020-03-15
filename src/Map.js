@@ -50,7 +50,7 @@ export class VaccineMap extends React.Component {
       />
       createMarkers();
       {selected.map(marker => (
-        <Marker key= {marker.Name} position={[marker.Latitude, marker.Longitude]}>
+        <Marker position={[marker.Latitude, marker.Longitude]}>
           <Popup>{marker.Name}<br/>{marker.City}</Popup>
         </Marker>
       ))}
