@@ -43,11 +43,11 @@ export class VaccinePage extends React.Component {
                         <div className="row">
                             <div className="col" id="vaccine-info" >
                                 <h2 id='flu-shot-location-words' text-align="center">Flu shot providers nearby:</h2>
-                                <div  class="leaflet-container">
+                                <div  className="leaflet-container">
                                     <VaccineMap zip={this.state.input}/>
                                 </div>
                                 <div>
-                                    <ReactVirtualizedTable zip={this.state.input} id='list-providers'/>
+                                    <ReactVirtualizedTable className="table" zip={this.state.input} id='list-providers'/>
                                 </div>
                             </div>
                             
