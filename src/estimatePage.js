@@ -11,15 +11,15 @@ import 'mdbreact/dist/css/mdb.css';
 import './css/WebpageStyle.css'
 
 export class EstimatePage extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      inputtedGuess: '',
-      guessedInc: 0,
-      allInc: [],
-      actualInc: 0
-    }
-  }
+  // constructor(props) {
+  //   super(props)
+  //   this.state = {
+  //     inputtedGuess: '',
+  //     guessedInc: 0,
+  //     allInc: [],
+  //     actualInc: 0
+  //   }
+  // }
 
   // componentDidMount() {
   //   // Store the AuthObserver (so you can unauthorize the application)
