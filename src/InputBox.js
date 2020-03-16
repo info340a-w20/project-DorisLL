@@ -83,6 +83,10 @@ renderSuggestions () {
         userRef.on("value", (snapshot) => {
           if(userRef !== null) {
             let data = snapshot.val();
+            if(data == null) {
+              this.setState({allDefaultZip: "none"})
+              return 
+            }
             let dataKeys = Object.keys(data);
               // Get the value of the data
               let string = ''
