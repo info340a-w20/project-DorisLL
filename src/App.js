@@ -95,8 +95,7 @@ export class App extends Component {
                   <MDBBreadcrumbItem><Link to="/Estimate_Page"><span className="nav-label">Flu Statistics</span></Link></MDBBreadcrumbItem>
                   <MDBBreadcrumbItem><Link to="/Vaccine_Page"><span className="nav-label">Find a Vaccine</span></Link></MDBBreadcrumbItem>
                 {/* Add an onClick event to signOut of the application*/}                            
-                <MDBBreadcrumbItem onClick = {() => firebase.auth().signOut()} style={{ position: "fixed", right: "10px", 
-                                        color:"white"}}><span className="nav-label">Sign-out</span></MDBBreadcrumbItem>
+                  <MDBBreadcrumbItem onClick = {() => firebase.auth().signOut()}><span className="nav-label">Sign-out</span></MDBBreadcrumbItem>
                 </MDBBreadcrumb >
               </MDBContainer>
 

@@ -12,20 +12,7 @@ import 'firebase/database';
 //inputs=[{'guessedInc': "The average number of days a disease is incubated is "}]
 
 export class Hospitalizations extends React.Component {
-//   super(props)
-//   this.submissionsRef = firebase.database().ref(this.props.dataRef);
-//   const userRef = this.submissionsRef.child(firebase.auth().currentUser.uid);
-  // userRef.on('value').then(function(snap) {
-  //   if(snap.val() === null) {
-  //     this.state = {
-  //       inputtedGuess: '',
-  //       guessedInc: 0,
-  //       allInc: [],
-  //       renderedAverage: 0,
-  //       actualInc: 0
-  //     }
-  //   }
-  // })
+
 
     constructor(props) {
         super(props)
