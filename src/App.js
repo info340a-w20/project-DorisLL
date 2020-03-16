@@ -45,7 +45,7 @@ const uiConfig = {
   // We will display Google and Facebook as auth providers.
   signInOptions: [
     firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-    firebase.auth.FacebookAuthProvider.PROVIDER_ID
+    // firebase.auth.FacebookAuthProvider.PROVIDER_ID
   ]
 };
 
@@ -86,7 +86,6 @@ export class App extends Component {
       // See: https://github.com/firebase/firebaseui-web-react#using-styledfirebaseauth-with-a-redirect  
 
       return (
-
           <Router>
 
             <div className="container">
@@ -120,7 +119,3 @@ export class App extends Component {
   }
 
 }
-
-{/* <i className="fa fa-bar-chart fa-sm link-icon" aria-hidden="true"></i>
-<i className="fa fa-home fa-sm link-icon" aria-hidden="true"></i>
-<i className="fa fa-map-marker fa-sm link-icon" aria-hidden="true"></i> */}

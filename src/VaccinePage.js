@@ -40,14 +40,6 @@ export class VaccinePage extends React.Component {
                                     ></SearchCard>
                     </div>
 
-                    {/* <div>
-                    <SearchCard id="Vaccine-Card" header="Vaccine Finder" text="Find flu shots near you?"
-                                    // changeStoredValue={this.ReturnInputValue.bind(this)}
-                                    changeStoredValue={this.onChangeInputValue.bind(this)}
-                                    ></SearchCard>
-                    </div>
- */}
-
                     {/* Map + Table */}
                     <div className="container">
                         <div className="row">
