@@ -6,12 +6,18 @@ import {PageFooter} from './PageFooter'
 import {PageHeader} from './PageHeader'
 import './css/WebpageStyle.css'
 
+
+
+
+
+
 export class VaccinePage extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
             input: '',
           };
+
     }
 
     //Callback from InputBox and set the state input for SearchCard when button clicked
@@ -20,6 +26,15 @@ export class VaccinePage extends React.Component {
             input: value
         })
     }
+
+    // save() {
+    //     // const s = new XMLSerializer();
+    //     // const svgStr = s.serializeToString(document.querySelector("svg"));        
+    //     this.SearchHistoryRef.push({
+    //         zip: ,
+    //         time:firebase.database.ServerValue.TIMESTAMP, 
+    //     });
+    // }
     
     render() {
         return (
@@ -38,6 +53,15 @@ export class VaccinePage extends React.Component {
                                     changeStoredValue={this.onChangeInputValue.bind(this)}
                                     ></SearchCard>
                     </div>
+
+                    {/* <div>
+                    <SearchCard id="Vaccine-Card" header="Vaccine Finder" text="Find flu shots near you?"
+                                    // changeStoredValue={this.ReturnInputValue.bind(this)}
+                                    changeStoredValue={this.onChangeInputValue.bind(this)}
+                                    ></SearchCard>
+                    </div>
+ */}
+
                     {/* Map + Table */}
                     <div className="container">
                         <div className="row">
@@ -56,7 +80,7 @@ export class VaccinePage extends React.Component {
                     </div>
                 </div>
 
-                {/* Footer */}
+
                 <div>
                 <PageFooter />
                 </div>

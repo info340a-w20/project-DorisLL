@@ -66,7 +66,7 @@ export class App extends Component {
       (user) => this.setState({isSignedIn: !!user})
   );
     // Set the state of `isSignedIn`
-
+      
     // Make a reference to this particular user in the `favorites/` reference
 
     // When the value at the "favorites/user.uid" reference changes, 
@@ -78,9 +78,6 @@ export class App extends Component {
   componentWillUnmount() {
       this.unregisterAuthObserver();
   }
-
-
-
 
 
 

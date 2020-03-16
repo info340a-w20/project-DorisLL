@@ -7,6 +7,27 @@ import Paper from '@material-ui/core/Paper';
 import { AutoSizer, Column, Table } from 'react-virtualized';
 import './css/WebpageStyle.css'
 
+// // Import firebase and StyledFirebaseAuth
+// import firebase from "firebase";
+// import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
+// import LogIn from './LogIn';
+
+// // Configure Firebase (get configuration from Firebase Console)
+// const firebaseConfig = {
+//   apiKey: "AIzaSyDZRrWIFCCG5zDIR1xU9SpuPG6PNs6NuJg",
+//   authDomain: "info430-flu-website.firebaseapp.com",
+//   databaseURL: "https://info430-flu-website.firebaseio.com",
+//   projectId: "info430-flu-website",
+//   storageBucket: "info430-flu-website.appspot.com",
+//   messagingSenderId: "508636748505",
+//   appId: "1:508636748505:web:668dedbd0f2166156dfcc8",
+//   measurementId: "G-KBV16ZWHT6"
+// };
+
+
+
+
+
 const styles = theme => ({
   flexContainer: {
     display: 'flex',
@@ -134,6 +155,8 @@ export class ReactVirtualizedTable extends React.Component {
     this.setState({
       input: ''
     });
+    // this.allLocations = firebase.database.ref("locations")
+    // this.allLocations.on('value', )
   }
 
   upDateInputValue () { // Save the selected zip from props (passing in from VaccinePage) and save as state
