@@ -6,16 +6,16 @@ import './css/WebpageStyle.css'
 import firebase from "firebase";
 
 // Configure Firebase (get configuration from Firebase Console)
-const firebaseConfig = {
-  apiKey: "AIzaSyDZRrWIFCCG5zDIR1xU9SpuPG6PNs6NuJg",
-  authDomain: "info430-flu-website.firebaseapp.com",
-  databaseURL: "https://info430-flu-website.firebaseio.com",
-  projectId: "info430-flu-website",
-  storageBucket: "info430-flu-website.appspot.com",
-  messagingSenderId: "508636748505",
-  appId: "1:508636748505:web:668dedbd0f2166156dfcc8",
-  measurementId: "G-KBV16ZWHT6"
-};
+// const firebaseConfig = {
+//   apiKey: "AIzaSyDZRrWIFCCG5zDIR1xU9SpuPG6PNs6NuJg",
+//   authDomain: "info430-flu-website.firebaseapp.com",
+//   databaseURL: "https://info430-flu-website.firebaseio.com",
+//   projectId: "info430-flu-website",
+//   storageBucket: "info430-flu-website.appspot.com",
+//   messagingSenderId: "508636748505",
+//   appId: "1:508636748505:web:668dedbd0f2166156dfcc8",
+//   measurementId: "G-KBV16ZWHT6"
+// };
 
 export class InputBox extends React.Component {
   constructor (props) {
@@ -153,8 +153,8 @@ renderSuggestions () {
                 disabled= {!this.state.input}
                 >Delete Selected History</button>
 
-        <div >My Saved History: 
-          <p> {this.state.allDefaultZip}</p>
+        <div style= {{color : '#747373'}}>My Saved History: 
+          <p > {this.state.allDefaultZip}</p>
           </div>
       </form>
     );
