@@ -6,11 +6,6 @@ import {PageFooter} from './PageFooter'
 import {PageHeader} from './PageHeader'
 import './css/WebpageStyle.css'
 
-
-
-
-
-
 export class VaccinePage extends React.Component {
     constructor(props) {
         super(props)
@@ -26,15 +21,6 @@ export class VaccinePage extends React.Component {
             input: value
         })
     }
-
-    // save() {
-    //     // const s = new XMLSerializer();
-    //     // const svgStr = s.serializeToString(document.querySelector("svg"));        
-    //     this.SearchHistoryRef.push({
-    //         zip: ,
-    //         time:firebase.database.ServerValue.TIMESTAMP, 
-    //     });
-    // }
     
     render() {
         return (
@@ -79,8 +65,6 @@ export class VaccinePage extends React.Component {
                         
                     </div>
                 </div>
-
-
                 <div>
                 <PageFooter />
                 </div>

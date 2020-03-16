@@ -23,61 +23,12 @@ export class InputBox extends React.Component {
     this.state = {
       suggestions:[],
       input:'',
-      allDefaultZip: '',
-      userSaved: false,
+      allDefaultZip: this.processDefault,//'none',
+      empty: this.upDateEmpty,
     };
 
     this.zipRef = firebase.database().ref("SavedZip")
-    // When the value at the zipRef reference changes, change the state of allDefaultZip to be the value stored at that reference
-    // if (this.state.userSaved) {
-    // this.unregisterAuthObserver = firebase.auth().onAuthStateChanged((user) => { 
-    //   if (user) {
-    //     const userRef = this.zipRef.child(user.uid);
-
-    //     if (userRef !== null) {
-    //     // const userRef = this.zipRef.child(user.uid);
-    //     userRef.on("value", (snapshot) => {
-    //       let data = snapshot.val();
-    //       let dataKeys = Object.keys(data);
-    
-    //         // Get the value of the data
-    //         let string = ''
-    //           dataKeys.map((d) => {
-    //             // let singleObject = data[d]
-    //             // string = string + " " + singleObject.zip
-    //             string = string + " " + d 
-    //             console.log("currentString" + string)
-    //           })
-  
-    //       //Set the state
-    //       this.setState({allDefaultZip: string})
-    
-    //       this.setState({ZipHistory: snapshot.val()});
-    //     })
-    //   }
-    //   }
-    // })}
-
-
-// // Worked
-//     this.zipRef.on('value', (snapshot) => {
-//       //Get the value of the data
-//       let data = snapshot.val();
-//       let dataKeys = Object.keys(data);
-
-//         //Get the value of the data
-//         let string = ''
-
-//         dataKeys.map((d) => {
-//           let singleObject = data[d]
-//           string = string + " " + singleObject.zip
-//           console.log("currentString" + string)
-//         })
-//       //Set the state
-//       this.setState({allDefaultZip: string})
-//     })
   }
-
 
 
 // Renew state as user type
@@ -91,6 +42,7 @@ onZipChanged = (e) => {
   }
   this.setState(() => ({ suggestions, input: value }));
   this.props.changeValue(this.state.input); 
+  this.processDefault();
 }
 
 // Enable click for suggested values
@@ -100,6 +52,7 @@ suggestionSelected (value) {
     suggestions: [],
   }))
   this.props.changeValue(this.state.input);
+  this.processDefault();
 }
 
 // Return suggested values
@@ -115,104 +68,95 @@ renderSuggestions () {
   )
  }
 
- saveDefault () {
-
-   if (!this.state.userSaved) { //!this.state.userSaved
-    let newZip = this.state.input;
-    const objectRef = this.zipRef.child(firebase.auth().currentUser.uid).child(newZip);
-    objectRef.set(({frequency: 1}))
-    this.setState({userSaved: true})
-   } else {
-   let newZip = this.state.input;
-  //  const objectRef = this.zipRef.child(firebase.auth().currentUser.uid)
-  const objectRef = this.zipRef.child(firebase.auth().currentUser.uid).child(newZip);
-
-  // if (objectRef == null) {
-    objectRef.set(({frequency: 1}))
-  // } 
-  // else {
-  //   let curFre = objectRef.frequency
-  //   objectRef.update("frequency", curFre + 1);
-  // }
-
-  if (this.state.userSaved) {
+ //Generate allDefaultZip (overall), no change
+ processDefault() {
+   this.upDateEmpty();
+   console.log("state.empty: " + this.state.empty)
+   // If the database for the user is empty
+  if(this.state.empty) {
+    this.setState({allDefaultZip: "none"})
+  } else {
+    // let objectRef = this.zipRef.child(firebase.auth().currentUser.uid).child(newZip);
     this.unregisterAuthObserver = firebase.auth().onAuthStateChanged((user) => { 
       if (user) {
         const userRef = this.zipRef.child(user.uid);
-
-        if (userRef !== null) {
-        // const userRef = this.zipRef.child(user.uid);
         userRef.on("value", (snapshot) => {
           if(userRef !== null) {
-          let data = snapshot.val();
-          let dataKeys = Object.keys(data);
-    
-            // Get the value of the data
-            let string = ''
-              dataKeys.map((d) => {
-                // let singleObject = data[d]
-                // string = string + " " + singleObject.zip
-                string = string + " " + d 
-                console.log("currentString" + string)
-              })
-  
-          //Set the state
-          this.setState({allDefaultZip: string})
-    
-          this.setState({ZipHistory: snapshot.val()});}
+            let data = snapshot.val();
+            let dataKeys = Object.keys(data);
+              // Get the value of the data
+              let string = ''
+                dataKeys.map((d) => {
+                  string = string + " " + d 
+                  console.log("currentString" + string)
+                })
+            //Set the state
+            this.setState({allDefaultZip: string})
+          }
         })
       }
-      }
-    })}}
+    })
+  }
+  console.log("allDefaultZip:" + this.state.allDefaultZip)
+ }
 
+ //check empty
+ upDateEmpty () {
+  let objectRef = this.zipRef.child(firebase.auth().currentUser.uid);  //.child(newZip);
+  if(objectRef.child == null) {
+    this.setState(() => ({empty: true}))
+  } else {
+    this.setState(() => ({empty: false}))
+  }
+ }
+
+ saveDefault () {
+    let newZip = this.state.input;
+    const objectRef = this.zipRef.child(firebase.auth().currentUser.uid).child(newZip);
+    objectRef.set(({frequency: 1}))
+    this.processDefault();
   }
 
   deleteHistory() {
     this.unregisterAuthObserver = firebase.auth().onAuthStateChanged((user) => { 
       if (user) {
-        const userRef = this.zipRef.child(user.uid);
+        // const userRef = this.zipRef.child(user.uid);
         let input = this.state.input;
         let ref = this.zipRef.child(user.uid).child(input);
         ref.remove();
-        this.setState.allDefaultZip = 'none'
-        this.setState({userSaved: false})
+        this.upDateEmpty();
+        this.processDefault();
     }})
-
   }
  
-
   render() {
     const { input } = this.state;
-      return (
-        <form>
-          <div className="Input-Box">
-            <div className="InputBox">
-              <input value={input} onInput={this.onZipChanged} type="number" />
-              {this.renderSuggestions()}
-            </div>
-          </div>          
+    return (
+      <form>
+        <div className="Input-Box">
+          <div className="InputBox">
+            <input value={input} onInput={this.onZipChanged} type="number" />
+            {this.renderSuggestions()}
+          </div>
+        </div>          
 
-          <button type="button" id="GoButton" 
-                  onClick={this.onZipChanged.bind(this)}
-                  disabled={!this.state.input}>Go</button>
+        <button type="button" id="GoButton" 
+                onClick={this.onZipChanged.bind(this)}
+                disabled={!this.state.input}>Go</button>
 
-          <button type="button" id="Save" 
-                  // onClick={this.saveHistory.bind(this)}
-                  onClick = {() => this.saveDefault()}
-                  disabled= {!this.state.input}
-                  >Save Zip</button>
-          <button type="button" id="Delete" 
-                  // onClick={this.saveHistory.bind(this)}
-                  onClick = {() => this.deleteHistory()}
-                  disabled= {!this.state.input}
-                  >Delete Selected History </button>
+        <button type="button" id="Save" 
+                onClick = {() => this.saveDefault()}
+                disabled= {!this.state.input}
+                >Save Zip</button>
+        <button type="button" id="Delete" 
+                onClick = {() => this.deleteHistory()}
+                disabled= {!this.state.input}
+                >Delete Selected History</button>
 
-          <div >My Saved History: 
-            {/* <loadAllDefaultZip allZips={this.state.allDefaultZip} /> */}
-            <p> {this.state.allDefaultZip}</p>
-            </div>
-        </form>
-
+        <div >My Saved History: 
+          <p> {this.state.allDefaultZip}</p>
+          </div>
+      </form>
     );
   }
 }
