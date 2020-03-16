@@ -1,13 +1,45 @@
 import React from 'react';
+import {PageFooter} from './PageFooter'
+import {PageHeader} from './PageHeader'
+import {Card} from 'react-bootstrap';
+import './css/WebpageStyle.css'
+
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
 
 export default function LogIn(props) {
     return (
         <div>
-            <h1>Get to know more about Flu!!!</h1>
-            <p>Please sign-in:</p>
-            <StyledFirebaseAuth uiConfig={props.uiConfig} firebaseAuth={props.fbAuth()}/>
-      </div>
+            {/* Header */}
+            <div>
+                <PageHeader />
+            </div>
+
+            {/* Body */}
+            <Card className="card">
+                <Card.Header className="card-header" as="h2" id="card-header">Welcome to Flu Preventing Website!</Card.Header>
+                <Card.Body className="card-body">
+                    <p id="logIn-Text">Please Sign-In with Google Account</p>
+                    <StyledFirebaseAuth uiConfig={props.uiConfig} firebaseAuth={props.fbAuth()}/>
+                    </Card.Body>
+            </Card>
+
+            {/* Footer */}
+            <div>
+            <PageFooter />
+            </div>
+        </div>
+
 
     )
 }
+
+
+
+{/* <Card className = "card">
+<Card.Header className="card-header" as="h2" id="card-header">{this.props.header}</Card.Header>
+<Card.Body className="card-body">
+    <Card.Text>
+        {this.props.text}}
+    </Card.Text>
+</Card.Body>
+</Card> */}

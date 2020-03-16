@@ -363,3 +363,9 @@ section {
     background-color: navy;
     color: white;
 }
+
+#logIn-Text {
+    text-align: center;
+    font-weight: bold;
+    color: navy;
+}
