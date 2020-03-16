@@ -12,6 +12,7 @@ export class VaccinePage extends React.Component {
         this.state = {
             input: '',
           };
+
     }
 
     //Callback from InputBox and set the state input for SearchCard when button clicked
@@ -38,6 +39,7 @@ export class VaccinePage extends React.Component {
                                     changeStoredValue={this.onChangeInputValue.bind(this)}
                                     ></SearchCard>
                     </div>
+
                     {/* Map + Table */}
                     <div className="container">
                         <div className="row">
@@ -55,8 +57,6 @@ export class VaccinePage extends React.Component {
                         
                     </div>
                 </div>
-
-                {/* Footer */}
                 <div>
                 <PageFooter />
                 </div>

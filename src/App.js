@@ -1,5 +1,3 @@
-
-
 import React, { Component } from 'react';
 
 import './App.css';
@@ -9,16 +7,19 @@ import 'mdbreact/dist/css/mdb.css';
 import { MDBBreadcrumb, MDBBreadcrumbItem, MDBContainer } from "mdbreact";
 import './css/WebpageStyle.css'
 
-import { HashRouter as Router, Route, Link } from "react-router-dom";
+import { HashRouter as Router, Redirect, Route, Link } from "react-router-dom";
 import { EstimatePage } from './estimatePage';
 import { IntroPage } from './IntroPage';
 import { VaccinePage } from './VaccinePage';
+
+
 
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 // Import firebase and StyledFirebaseAuth
 import firebase from "firebase";
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
+import LogIn from './LogIn';
 
 // Configure Firebase (get configuration from Firebase Console)
 const firebaseConfig = {
@@ -44,7 +45,7 @@ const uiConfig = {
   // We will display Google and Facebook as auth providers.
   signInOptions: [
     firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-    firebase.auth.FacebookAuthProvider.PROVIDER_ID
+    // firebase.auth.FacebookAuthProvider.PROVIDER_ID
   ]
 };
 
@@ -58,8 +59,6 @@ export class App extends Component {
     }
   }
 
-
-
     // See: https://github.com/firebase/firebaseui-web-react#using-firebaseauth-with-local-state
   componentDidMount() {
     // Store the AuthObserver (so you can unauthorize the application)
@@ -67,7 +66,7 @@ export class App extends Component {
       (user) => this.setState({isSignedIn: !!user})
   );
     // Set the state of `isSignedIn`
-
+      
     // Make a reference to this particular user in the `favorites/` reference
 
     // When the value at the "favorites/user.uid" reference changes, 
@@ -82,24 +81,11 @@ export class App extends Component {
 
 
 
-
-
-
   render() {
       // If the state is not currently signed in, return a simple sign in screen
-      // See: https://github.com/firebase/firebaseui-web-react#using-styledfirebaseauth-with-a-redirect   
-      if (!this.state.isSignedIn) {
-        return (
-          <div>
-            <h1>My App</h1>
-            <p>Please sign-in:</p>
-            <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={firebase.auth()}/>
-          </div>
-        );
-      }    
+      // See: https://github.com/firebase/firebaseui-web-react#using-styledfirebaseauth-with-a-redirect  
 
       return (
-
           <Router>
 
             <div className="container">
@@ -114,9 +100,18 @@ export class App extends Component {
                 </MDBBreadcrumb >
               </MDBContainer>
 
-              <Route exact path="/" component={ IntroPage } />
-              <Route path="/Estimate_Page" component={ EstimatePage } />
-              <Route path="/Vaccine_Page" component={ VaccinePage } />
+              <Route path="/signIn" component={ LogIn } >
+                {!!firebase.auth().currentUser ? <Redirect to="/" /> : <LogIn uiConfig ={uiConfig} fbAuth = {firebase.auth}/> } 
+              </Route>
+              <Route exact path="/" component={ IntroPage }>
+                {!!firebase.auth().currentUser ? <IntroPage /> : <Redirect to="/signIn" />}
+              </Route>
+              <Route path="/Estimate_Page" component={ EstimatePage }>
+                {!!firebase.auth().currentUser ? <EstimatePage /> : <Redirect to="/signIn" />}
+              </Route>
+              <Route path="/Vaccine_Page" component={ VaccinePage }>
+                {!!firebase.auth().currentUser ? <VaccinePage /> : <Redirect to="/signIn" />}
+              </Route>
             </div>
           </Router>
       );
@@ -124,7 +119,3 @@ export class App extends Component {
   }
 
 }
-
-{/* <i className="fa fa-bar-chart fa-sm link-icon" aria-hidden="true"></i>
-<i className="fa fa-home fa-sm link-icon" aria-hidden="true"></i>
-<i className="fa fa-map-marker fa-sm link-icon" aria-hidden="true"></i> */}

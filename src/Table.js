@@ -134,6 +134,8 @@ export class ReactVirtualizedTable extends React.Component {
     this.setState({
       input: ''
     });
+    // this.allLocations = firebase.database.ref("locations")
+    // this.allLocations.on('value', )
   }
 
   upDateInputValue () { // Save the selected zip from props (passing in from VaccinePage) and save as state
@@ -142,7 +144,6 @@ export class ReactVirtualizedTable extends React.Component {
         input: propsValue
     })
   }
-
 
   render() {
     let rows = [];
