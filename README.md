@@ -14,15 +14,13 @@ This is the page which will prompt the user to login when first visiting the web
 
 This page allows users to be informed in a variety of basic categories about the flu and the flue vaccine. This is considered essential information about the topic which everyone should know.
 
-### `The Estimates Page
+### The Estimates Page
 
 This page allows the user to test their knowledge about certain topics revolving around the flu. Their inputted estimates will be compared to the average inputs by all users, as well as the actual value. The goal of this page is to show people ways in which the flu may be dangerous which we do not realize, which serve as motivation to get a vaccine!
 
 They will only be able to submit estimates once, and once they submit, the information which compares their knowledge to others will be saved in this page, and updates the average values of all users as other people provide inputs over time.
 
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Find a Vaccine
 
 This page allows a user to put in a zipcode, and find vaccine locations within that zipcode. Users can save their popularly searched zipcodes, as well as delete them from their search history. 
