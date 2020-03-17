@@ -228,6 +228,10 @@ form {
     background-color: darkred !important;
 }
 
+.container {
+    text-align: center;
+}
+
 .card-deck, form {
     margin-top: 1rem;
     margin-bottom: 1rem;

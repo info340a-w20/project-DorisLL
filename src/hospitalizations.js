@@ -123,7 +123,9 @@ export class Hospitalizations extends React.Component {
             <div>
                 <p id="descriptive-paragraph">{this.props.paragraph}</p>
                 <InputForms style={{visibility: 'hidden'}} inputs={this.props.inputs} onUpdate={this.handleChange.bind(this)} onClick={this.handleSubmit.bind(this)}  />
-                <EstimateBarChart inputtedGuess={this.state.guessedInc} averageGuess={newAverage} actualValue={this.state.actualInc}/>
+                <div className="container">
+                  <EstimateBarChart inputtedGuess={this.state.guessedInc} averageGuess={newAverage} actualValue={this.state.actualInc}/>
+                </div>
             </div>
           )
         }        
