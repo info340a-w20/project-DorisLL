@@ -1,27 +1,27 @@
 {
   "files": {
-    "main.css": "/project-DorisLL/static/css/main.283aac69.chunk.css",
-    "main.js": "/project-DorisLL/static/js/main.fcd8abca.chunk.js",
-    "main.js.map": "/project-DorisLL/static/js/main.fcd8abca.chunk.js.map",
+    "main.css": "/project-DorisLL/static/css/main.ecc9438f.chunk.css",
+    "main.js": "/project-DorisLL/static/js/main.6431345d.chunk.js",
+    "main.js.map": "/project-DorisLL/static/js/main.6431345d.chunk.js.map",
     "runtime-main.js": "/project-DorisLL/static/js/runtime-main.85cfd4ff.js",
     "runtime-main.js.map": "/project-DorisLL/static/js/runtime-main.85cfd4ff.js.map",
     "static/css/2.01fea9f7.chunk.css": "/project-DorisLL/static/css/2.01fea9f7.chunk.css",
-    "static/js/2.2276c516.chunk.js": "/project-DorisLL/static/js/2.2276c516.chunk.js",
-    "static/js/2.2276c516.chunk.js.map": "/project-DorisLL/static/js/2.2276c516.chunk.js.map",
+    "static/js/2.f6d2065d.chunk.js": "/project-DorisLL/static/js/2.f6d2065d.chunk.js",
+    "static/js/2.f6d2065d.chunk.js.map": "/project-DorisLL/static/js/2.f6d2065d.chunk.js.map",
     "index.html": "/project-DorisLL/index.html",
-    "precache-manifest.6c28cf5649f3678df3478cbd440715a5.js": "/project-DorisLL/precache-manifest.6c28cf5649f3678df3478cbd440715a5.js",
+    "precache-manifest.7648e3ee027457bc9cce8791ec3faea3.js": "/project-DorisLL/precache-manifest.7648e3ee027457bc9cce8791ec3faea3.js",
     "service-worker.js": "/project-DorisLL/service-worker.js",
     "static/css/2.01fea9f7.chunk.css.map": "/project-DorisLL/static/css/2.01fea9f7.chunk.css.map",
-    "static/css/main.283aac69.chunk.css.map": "/project-DorisLL/static/css/main.283aac69.chunk.css.map",
-    "static/js/2.2276c516.chunk.js.LICENSE.txt": "/project-DorisLL/static/js/2.2276c516.chunk.js.LICENSE.txt",
+    "static/css/main.ecc9438f.chunk.css.map": "/project-DorisLL/static/css/main.ecc9438f.chunk.css.map",
+    "static/js/2.f6d2065d.chunk.js.LICENSE.txt": "/project-DorisLL/static/js/2.f6d2065d.chunk.js.LICENSE.txt",
     "static/media/mdb.css": "/project-DorisLL/static/media/arrow_right.8ef6a08c.svg",
     "static/media/all.min.css": "/project-DorisLL/static/media/fa-solid-900.cdfec5cf.woff"
   },
   "entrypoints": [
     "static/js/runtime-main.85cfd4ff.js",
     "static/css/2.01fea9f7.chunk.css",
-    "static/js/2.2276c516.chunk.js",
-    "static/css/main.283aac69.chunk.css",
-    "static/js/main.fcd8abca.chunk.js"
+    "static/js/2.f6d2065d.chunk.js",
+    "static/css/main.ecc9438f.chunk.css",
+    "static/js/main.6431345d.chunk.js"
   ]
 }
