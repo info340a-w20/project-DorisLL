@@ -20,9 +20,3 @@ This page allows the user to test their knowledge about certain topics revolving
 
 They will only be able to submit estimates once, and once they submit, the information which compares their knowledge to others will be saved in this page, and updates the average values of all users as other people provide inputs over time.
 
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-This page allows a user to put in a zipcode, and find vaccine locations within that zipcode. Users can save their popularly searched zipcodes, as well as delete them from their search history. 
