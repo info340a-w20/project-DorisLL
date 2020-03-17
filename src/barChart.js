@@ -19,7 +19,7 @@ export class EstimateBarChart extends React.Component {
                 <BarChart width={600} height={300} data={data}>
                   <XAxis dataKey="name"/>
                   <YAxis />
-                  <Bar type="monotone" dataKey="value" barSize={30} fill="navy" />
+                  <Bar type="monotone" dataKey="value" barSize={30} fill="darkred" />
                 </BarChart>
             </div>
         )

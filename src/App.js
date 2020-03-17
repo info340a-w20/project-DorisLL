@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import './App.css';
 
 import '@fortawesome/fontawesome-free/css/all.min.css';
+
 import 'mdbreact/dist/css/mdb.css';
 import { MDBBreadcrumb, MDBBreadcrumbItem, MDBContainer } from "mdbreact";
 import './css/WebpageStyle.css'
@@ -91,11 +92,11 @@ export class App extends Component {
             <div className="container">
               <MDBContainer>
                 <MDBBreadcrumb>
-                  <MDBBreadcrumbItem><Link to="/"><span className="nav-label">Home</span></Link></MDBBreadcrumbItem>
-                  <MDBBreadcrumbItem><Link to="/Estimate_Page"><span className="nav-label">Flu Statistics</span></Link></MDBBreadcrumbItem>
-                  <MDBBreadcrumbItem><Link to="/Vaccine_Page"><span className="nav-label">Find a Vaccine</span></Link></MDBBreadcrumbItem>
+                  <MDBBreadcrumbItem><Link to="/"><span className="route-label">Home</span></Link></MDBBreadcrumbItem>
+                  <MDBBreadcrumbItem><Link to="/Estimate_Page"><span className="route-label">Flu Statistics</span></Link></MDBBreadcrumbItem>
+                  <MDBBreadcrumbItem><Link to="/Vaccine_Page"><span className="route-label"> Find a Vaccine</span></Link></MDBBreadcrumbItem>
                 {/* Add an onClick event to signOut of the application*/}                            
-                  <MDBBreadcrumbItem onClick = {() => firebase.auth().signOut()}><span className="nav-label">Sign-out</span></MDBBreadcrumbItem>
+                  <MDBBreadcrumbItem onClick = {() => firebase.auth().signOut()}><Link to="/signIn"><span className="route-label">Sign-out</span></Link></MDBBreadcrumbItem>
                 </MDBBreadcrumb >
               </MDBContainer>
 

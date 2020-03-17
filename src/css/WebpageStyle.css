@@ -269,7 +269,18 @@ button {
     margin-right: 10%;
 }
 
+.comparison-cards {
+    box-sizing: inherit;
+}
+
+h2#card-header.card-header {
+    font-size: 1.3rem;
+}
+
 @media (min-width: 598px) {
+    .fa {
+        font-size: 1rem;
+    }
     p, h4, .link-icon{
         font-size: 1.0rem;
     }
@@ -286,10 +297,14 @@ button {
         display: block;
     }
 
-    .nav-label{
-        display: inline;
+    .nav-label .route-label {
         color: navy;
     }
+
+    .nav-label{
+        display: inline;
+    }
+    
 
     footer .nav-label {
         color: whitesmoke;
